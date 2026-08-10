@@ -1,9 +1,10 @@
 # ABC FLY EXPEDITIONS — Auditoria Completa + Arquitetura da Nova Plataforma
 
-**Status:** Aguardando aprovação antes do desenvolvimento  
+**Status:** Fase A aprovada e implementada (fundação)  
 **Data:** 10 de agosto de 2026  
 **Site auditado:** https://www.abcflyexpeditions.com  
-**Modelo atual:** Wix Stores (roteiros como produtos de e-commerce)
+**Modelo atual:** Wix Stores (roteiros como produtos de e-commerce)  
+**Defaults aprovados com o “sim”:** preço “a partir de” visível · PT-BR inicial · stack Next.js + conteúdo/CMS de saídas
 
 ---
 
