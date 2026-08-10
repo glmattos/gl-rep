@@ -30,49 +30,17 @@ export default async function DiaryPostPage({ params }: Props) {
 
   return (
     <>
-      <section
-        style={{
-          position: "relative",
-          minHeight: "65svh",
-          display: "grid",
-          alignItems: "end",
-          color: "var(--snow)",
-        }}
-      >
-        <div style={{ position: "absolute", inset: 0 }}>
+      <section className="hero-shell hero-shell--short">
+        <div className="hero-bg">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            className="hero-media"
-            src={post.heroImage}
-            alt={post.title}
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
-          />
-          <div
-            style={{
-              position: "absolute",
-              inset: 0,
-              background:
-                "linear-gradient(180deg, rgba(6,20,29,0.25), rgba(6,20,29,0.88))",
-            }}
-          />
+          <img className="hero-media" src={post.heroImage} alt={post.title} />
+          <div className="hero-overlay" />
         </div>
-        <div
-          className="container"
-          style={{
-            position: "relative",
-            zIndex: 1,
-            paddingBottom: "3rem",
-            paddingTop: "calc(var(--header-h) + 2rem)",
-            maxWidth: "52rem",
-          }}
-        >
+        <div className="container hero-content" style={{ maxWidth: "52rem" }}>
           <p className="eyebrow" style={{ color: "var(--lime)" }}>
             Diário · {formatDate(post.publishedAt)}
           </p>
-          <h1
-            className="display"
-            style={{ fontSize: "clamp(2.4rem, 6vw, 4.4rem)", maxWidth: "16ch" }}
-          >
+          <h1 className="display hero-title" style={{ maxWidth: "16ch" }}>
             {post.title}
           </h1>
         </div>

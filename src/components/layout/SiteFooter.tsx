@@ -48,7 +48,8 @@ export function SiteFooter() {
             <div style={{ display: "grid", gap: "0.55rem" }}>
               <Link href="/expedicoes">Expedições</Link>
               <Link href="/destinos">Destinos</Link>
-              <Link href="/atividades">Atividades</Link>
+              <Link href="/atividades">Experiências</Link>
+              <Link href="/contato">Contato</Link>
               <Link href="/diario">Diário</Link>
             </div>
           </div>

@@ -3,9 +3,9 @@ import Link from "next/link";
 import { getAllActivityHubs, getExpeditionsForActivity } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Atividades",
+  title: "Experiências",
   description:
-    "Trekking, bike, navegações e natureza — filtre expedições ABC Fly por atividade.",
+    "Trekking, bike, navegações e natureza — filtre expedições ABC Fly por experiência.",
 };
 
 export default function AtividadesPage() {
@@ -17,7 +17,9 @@ export default function AtividadesPage() {
         <div className="container">
           <div className="section-head">
             <span className="eyebrow">Como você quer explorar</span>
-            <h1 className="display">Atividades</h1>
+            <h1 className="display" style={{ fontSize: "var(--h1)", maxWidth: "12ch" }}>
+              Experiências
+            </h1>
             <p>
               Uma linguagem clara de descoberta. Sem categorias de loja — só o
               jeito como você quer sentir o mundo.

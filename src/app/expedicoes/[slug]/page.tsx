@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { DeparturesTable } from "@/components/expedition/DeparturesTable";
 import { QuoteForm } from "@/components/quote/QuoteForm";
@@ -44,7 +43,7 @@ export default async function ExpeditionPage({ params }: Props) {
   const pageUrl = `https://www.abcflyexpeditions.com/expedicoes/${expedition.slug}`;
 
   return (
-    <>
+    <div className="has-sticky-cta">
       <JsonLd
         data={{
           "@context": "https://schema.org",
@@ -88,73 +87,31 @@ export default async function ExpeditionPage({ params }: Props) {
           })),
         }}
       />
-      <section
-        style={{
-          position: "relative",
-          minHeight: "88svh",
-          display: "grid",
-          alignItems: "end",
-          color: "var(--snow)",
-          overflow: "hidden",
-        }}
-      >
-        <div style={{ position: "absolute", inset: 0 }}>
+      <section className="hero-shell hero-shell--short">
+        <div className="hero-bg">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             className="hero-media"
             src={expedition.heroImage}
             alt={expedition.heroAlt}
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
           />
-          <div
-            style={{
-              position: "absolute",
-              inset: 0,
-              background:
-                "linear-gradient(180deg, rgba(6,20,29,0.25) 0%, rgba(6,20,29,0.2) 40%, rgba(6,20,29,0.88) 100%)",
-            }}
-          />
+          <div className="hero-overlay" />
         </div>
 
-        <div
-          className="container"
-          style={{
-            position: "relative",
-            zIndex: 1,
-            paddingBottom: "clamp(2.5rem, 6vw, 4.5rem)",
-            paddingTop: "calc(var(--header-h) + 2rem)",
-          }}
-        >
+        <div className="container hero-content">
           <p className="eyebrow" style={{ color: "var(--lime)" }}>
             {expedition.destinations.join(" · ")}
           </p>
-          <h1
-            className="display"
-            style={{
-              margin: "0.55rem 0 0.8rem",
-              maxWidth: "16ch",
-              fontSize: "clamp(2.8rem, 7vw, 5.2rem)",
-            }}
-          >
+          <h1 className="display hero-title" style={{ maxWidth: "16ch" }}>
             {expedition.title}
           </h1>
-          <p
-            style={{
-              maxWidth: "36rem",
-              margin: "0 0 1.4rem",
-              fontSize: "1.15rem",
-              lineHeight: 1.65,
-              opacity: 0.92,
-            }}
-          >
-            {expedition.tagline}
-          </p>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem" }}>
+          <p className="hero-lead">{expedition.tagline}</p>
+          <div className="btn-row">
             <a href="#orcamento" className="btn btn-primary">
-              Solicitar orçamento
+              Solicite um orçamento
             </a>
             <a href="#roteiro" className="btn btn-secondary">
-              Ver roteiro
+              Conheça a experiência
             </a>
           </div>
         </div>
@@ -369,13 +326,19 @@ export default async function ExpeditionPage({ params }: Props) {
 
       <div className="sticky-cta">
         <a href="#orcamento" className="btn btn-primary">
-          Solicitar orçamento
+          Solicite um orçamento
         </a>
-        <Link href="/expedicoes" className="btn btn-secondary">
-          Outras expedições
-        </Link>
+        <a
+          href={`https://wa.me/5511915285462?text=${encodeURIComponent(
+            `Olá! Quero falar sobre: ${expedition.title}`,
+          )}`}
+          className="btn btn-secondary"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Fale com especialista
+        </a>
       </div>
-
-      </>
+    </div>
   );
 }

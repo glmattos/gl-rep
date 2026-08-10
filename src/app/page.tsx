@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ExpeditionCard } from "@/components/ui/ExpeditionCard";
 import {
+  getAllActivityHubs,
   getAllDestinationHubs,
   getAllPosts,
   getFeaturedExpeditions,
@@ -11,96 +12,76 @@ import { formatDate } from "@/lib/format";
 export default function HomePage() {
   const featured = getFeaturedExpeditions(3);
   const destinations = getAllDestinationHubs().slice(0, 6);
+  const activities = getAllActivityHubs();
   const testimonials = getTestimonials().slice(0, 2);
   const posts = getAllPosts().slice(0, 3);
 
   return (
     <>
-      <section
-        style={{
-          position: "relative",
-          minHeight: "100svh",
-          display: "grid",
-          alignItems: "end",
-          color: "var(--snow)",
-          overflow: "hidden",
-        }}
-      >
-        <div aria-hidden style={{ position: "absolute", inset: 0, zIndex: 0 }}>
+      <section className="hero-shell">
+        <div className="hero-bg" aria-hidden>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            className="hero-media"
-            src="/images/hero-home.jpg"
-            alt=""
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
-          />
-          <div
-            style={{
-              position: "absolute",
-              inset: 0,
-              background:
-                "linear-gradient(180deg, rgba(6,20,29,0.28) 0%, rgba(6,20,29,0.18) 42%, rgba(6,20,29,0.82) 100%)",
-            }}
-          />
+          <img className="hero-media" src="/images/hero-home.jpg" alt="" />
+          <div className="hero-overlay" />
         </div>
 
-        <div
-          className="container"
-          style={{
-            position: "relative",
-            zIndex: 1,
-            paddingBottom: "clamp(3.5rem, 8vw, 6rem)",
-            paddingTop: "calc(var(--header-h) + 2rem)",
-          }}
-        >
+        <div className="container hero-content">
           <p className="eyebrow reveal" style={{ color: "var(--lime)" }}>
             ABC Fly Expeditions
           </p>
-          <h1
-            className="display reveal reveal-delay"
-            style={{
-              margin: "0.7rem 0 1rem",
-              maxWidth: "11ch",
-              fontSize: "clamp(3.4rem, 9vw, 7rem)",
-            }}
-          >
+          <h1 className="display hero-title reveal reveal-delay">
             Explore Everything.
           </h1>
-          <p
-            className="reveal reveal-delay-2"
-            style={{
-              maxWidth: "34rem",
-              fontSize: "clamp(1.05rem, 2vw, 1.25rem)",
-              lineHeight: 1.65,
-              margin: "0 0 1.8rem",
-              color: "rgba(245,242,235,0.9)",
-            }}
-          >
+          <p className="hero-lead reveal reveal-delay-2">
             Expedições de aventura onde o mapa não grita — sussurra. Curadoria,
-            segurança e sofisticação para quem quer ir além do óbvio.
+            segurança e sofisticação para quem quer viver o mundo de verdade.
           </p>
-          <div
-            className="reveal reveal-delay-2"
-            style={{ display: "flex", flexWrap: "wrap", gap: "0.8rem" }}
-          >
+          <div className="btn-row reveal reveal-delay-2">
             <Link href="/expedicoes" className="btn btn-primary">
-              Ver expedições
+              Explore as expedições
             </Link>
             <Link href="/solicitar-orcamento" className="btn btn-secondary">
-              Solicitar orçamento
+              Solicite um orçamento
             </Link>
           </div>
         </div>
       </section>
 
-      <section className="section">
+      <section className="section" style={{ paddingBottom: "clamp(2rem, 4vw, 3rem)" }}>
+        <div className="container">
+          <div className="story-steps">
+            <div>
+              <span className="eyebrow">01</span>
+              <strong>O que é a ABC Fly?</strong>
+              <p>Braço de aventura de uma agência com 21+ anos de turismo de luxo.</p>
+            </div>
+            <div>
+              <span className="eyebrow">02</span>
+              <strong>O que você pode viver?</strong>
+              <p>Trekking, navegações, bike e natureza em destinos no Brasil e no mundo.</p>
+            </div>
+            <div>
+              <span className="eyebrow">03</span>
+              <strong>Por que ir conosco?</strong>
+              <p>Curadoria, segurança e atendimento humano — sem pacote genérico.</p>
+            </div>
+            <div>
+              <span className="eyebrow">04</span>
+              <strong>Como começar?</strong>
+              <p>Escolha uma expedição e solicite um orçamento personalizado.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section" style={{ paddingTop: "clamp(2rem, 4vw, 3rem)" }}>
         <div className="container">
           <div className="section-head">
-            <span className="eyebrow">Próximas jornadas</span>
+            <span className="eyebrow">Descoberta</span>
             <h2 className="display">Expedições em destaque</h2>
             <p>
-              Cada roteiro é uma página de experiência — não um produto de loja.
-              Escolha a jornada e solicite um orçamento sob medida.
+              Cada roteiro é uma experiência completa — imagens, itinerário,
+              datas e orçamento. Nunca um produto de loja.
             </p>
           </div>
           <div className="card-grid">
@@ -108,9 +89,9 @@ export default function HomePage() {
               <ExpeditionCard key={expedition.slug} expedition={expedition} />
             ))}
           </div>
-          <div style={{ marginTop: "2.2rem" }}>
+          <div style={{ marginTop: "2rem" }}>
             <Link href="/expedicoes" className="btn btn-dark">
-              Ver todas as expedições
+              Conheça todas as experiências
             </Link>
           </div>
         </div>
@@ -119,9 +100,9 @@ export default function HomePage() {
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
           <div className="section-head">
-            <span className="eyebrow">Escolha um horizonte</span>
-            <h2 className="display">Destinos</h2>
-            <p>Do gelo polar ao trópico — comece pelo mapa que mais te chama.</p>
+            <span className="eyebrow">Destinos</span>
+            <h2 className="display">Para onde você quer ir?</h2>
+            <p>Do gelo polar ao trópico — comece pelo horizonte que mais te chama.</p>
           </div>
           <div className="card-grid">
             {destinations.map((hub) => (
@@ -136,7 +117,7 @@ export default function HomePage() {
                   <img src={hub.heroImage} alt={hub.name} />
                 </div>
                 <div>
-                  <h3 className="display" style={{ margin: 0, fontSize: "1.7rem" }}>
+                  <h3 className="display" style={{ margin: 0, fontSize: "var(--h3)" }}>
                     {hub.name}
                   </h3>
                   <p style={{ margin: "0.35rem 0 0", color: "var(--stone)" }}>
@@ -157,21 +138,46 @@ export default function HomePage() {
           color: "var(--snow)",
         }}
       >
-        <div className="container" style={{ display: "grid", gap: "1rem", maxWidth: "46rem" }}>
-          <span className="eyebrow" style={{ color: "var(--lime)" }}>
-            Como viajamos
-          </span>
-          <h2 className="display" style={{ margin: 0, fontSize: "clamp(2.2rem, 5vw, 3.6rem)" }}>
-            Não vendemos pacotes. Criamos jornadas.
-          </h2>
-          <p style={{ margin: 0, lineHeight: 1.75, fontSize: "1.08rem", opacity: 0.9 }}>
-            Somos o braço de aventura da ABC FLY Viagens e Turismo, com mais de
-            21 anos de experiência. Planejamos cada detalhe para que você explore
-            com liberdade — e volte com histórias.
-          </p>
-          <div>
+        <div className="container">
+          <div className="section-head">
+            <span className="eyebrow" style={{ color: "var(--lime)" }}>
+              Experiências
+            </span>
+            <h2 className="display" style={{ color: "var(--snow)" }}>
+              Como você quer explorar?
+            </h2>
+            <p style={{ color: "rgba(245,242,235,0.82)" }}>
+              Trekking, navegações, bike e natureza selvagem — escolha o jeito
+              de sentir a jornada.
+            </p>
+          </div>
+          <div className="card-grid">
+            {activities.map((hub) => (
+              <Link
+                key={hub.slug}
+                href={`/atividades/${hub.slug}`}
+                className="link-focus"
+                style={{
+                  display: "grid",
+                  gap: "0.55rem",
+                  padding: "1.2rem",
+                  border: "1px solid var(--line-light)",
+                  background: "rgba(6,20,29,0.28)",
+                }}
+              >
+                <span className="eyebrow" style={{ color: "var(--lime)" }}>
+                  Experiência
+                </span>
+                <strong className="display" style={{ fontSize: "var(--h3)" }}>
+                  {hub.name}
+                </strong>
+                <span style={{ opacity: 0.85 }}>{hub.tagline}</span>
+              </Link>
+            ))}
+          </div>
+          <div style={{ marginTop: "1.75rem" }}>
             <Link href="/como-viajamos" className="btn btn-secondary">
-              Nosso método
+              Por que viajar com a ABC Fly
             </Link>
           </div>
         </div>
@@ -180,20 +186,13 @@ export default function HomePage() {
       <section className="section">
         <div className="container">
           <div className="section-head">
-            <span className="eyebrow">Viajantes</span>
+            <span className="eyebrow">Confiança</span>
             <h2 className="display">Histórias de quem foi</h2>
           </div>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
-              gap: "1.25rem",
-            }}
-            className="testimonial-grid"
-          >
+          <div className="testimonial-grid">
             {testimonials.map((item) => (
               <blockquote key={item.id} className="panel" style={{ margin: 0, padding: "1.4rem" }}>
-                <p className="display" style={{ fontSize: "1.45rem", lineHeight: 1.35 }}>
+                <p className="display" style={{ fontSize: "1.4rem", lineHeight: 1.35 }}>
                   “{item.quote}”
                 </p>
                 <footer style={{ color: "var(--stone)" }}>
@@ -202,9 +201,12 @@ export default function HomePage() {
               </blockquote>
             ))}
           </div>
-          <div style={{ marginTop: "1.5rem" }}>
+          <div style={{ marginTop: "1.5rem" }} className="btn-row">
             <Link href="/depoimentos" className="btn btn-dark">
               Ver depoimentos
+            </Link>
+            <Link href="/sobre" className="btn btn-dark">
+              Conhecer a ABC Fly
             </Link>
           </div>
         </div>
@@ -230,7 +232,7 @@ export default function HomePage() {
                 </div>
                 <div>
                   <span className="eyebrow">{formatDate(post.publishedAt)}</span>
-                  <h3 className="display" style={{ margin: "0.35rem 0", fontSize: "1.6rem" }}>
+                  <h3 className="display" style={{ margin: "0.35rem 0", fontSize: "var(--h3)" }}>
                     {post.title}
                   </h3>
                   <p style={{ margin: 0, color: "var(--stone)" }}>{post.excerpt}</p>
@@ -242,19 +244,27 @@ export default function HomePage() {
       </section>
 
       <section className="section">
-        <div className="container" style={{ display: "grid", gap: "1.2rem", maxWidth: "40rem" }}>
-          <span className="eyebrow">Pronto para o próximo mapa?</span>
-          <h2 className="display" style={{ margin: 0, fontSize: "clamp(2.2rem, 5vw, 3.4rem)" }}>
-            Solicite um orçamento personalizado
+        <div className="container" style={{ display: "grid", gap: "1.1rem", maxWidth: "42rem" }}>
+          <span className="eyebrow">Ação</span>
+          <h2 className="display" style={{ margin: 0, fontSize: "var(--h2)" }}>
+            Pronto para a próxima expedição?
           </h2>
-          <p style={{ margin: 0, lineHeight: 1.7, color: "var(--stone)" }}>
-            Conte a expedição, a data e o perfil do grupo. Nossa equipe retorna
-            com uma proposta clara — sem checkout genérico.
+          <p style={{ margin: 0, lineHeight: 1.7, color: "var(--stone)", fontSize: "var(--lead)" }}>
+            Conte a jornada, a data e o perfil do grupo. Um especialista monta
+            sua proposta — sem checkout automático.
           </p>
-          <div>
+          <div className="btn-row">
             <Link href="/solicitar-orcamento" className="btn btn-primary">
-              Começar orçamento
+              Solicite um orçamento
             </Link>
+            <a
+              href="https://wa.me/5511915285462?text=Ol%C3%A1!%20Quero%20falar%20com%20um%20especialista%20da%20ABC%20Fly."
+              className="btn btn-dark"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Fale com um especialista
+            </a>
           </div>
         </div>
       </section>

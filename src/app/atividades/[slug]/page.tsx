@@ -28,50 +28,18 @@ export default async function ActivityDetailPage({ params }: Props) {
 
   return (
     <>
-      <section
-        style={{
-          position: "relative",
-          minHeight: "70svh",
-          display: "grid",
-          alignItems: "end",
-          color: "var(--snow)",
-        }}
-      >
-        <div style={{ position: "absolute", inset: 0 }}>
+      <section className="hero-shell hero-shell--short">
+        <div className="hero-bg">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            className="hero-media"
-            src={hub.heroImage}
-            alt={hub.name}
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
-          />
-          <div
-            style={{
-              position: "absolute",
-              inset: 0,
-              background:
-                "linear-gradient(180deg, rgba(6,20,29,0.2), rgba(6,20,29,0.85))",
-            }}
-          />
+          <img className="hero-media" src={hub.heroImage} alt={hub.name} />
+          <div className="hero-overlay" />
         </div>
-        <div
-          className="container"
-          style={{
-            position: "relative",
-            zIndex: 1,
-            paddingBottom: "3rem",
-            paddingTop: "calc(var(--header-h) + 2rem)",
-          }}
-        >
+        <div className="container hero-content">
           <p className="eyebrow" style={{ color: "var(--lime)" }}>
-            Atividade
+            Experiência
           </p>
-          <h1 className="display" style={{ fontSize: "clamp(2.8rem, 7vw, 5rem)" }}>
-            {hub.name}
-          </h1>
-          <p style={{ maxWidth: "36rem", fontSize: "1.15rem", lineHeight: 1.65 }}>
-            {hub.tagline}
-          </p>
+          <h1 className="display hero-title">{hub.name}</h1>
+          <p className="hero-lead">{hub.tagline}</p>
         </div>
       </section>
 

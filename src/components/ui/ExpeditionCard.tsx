@@ -4,15 +4,15 @@ import { difficultyLabel, formatPrice } from "@/lib/format";
 
 export function ExpeditionCard({ expedition }: { expedition: Expedition }) {
   return (
-    <article>
+    <article style={{ minWidth: 0 }}>
       <Link
         href={`/expedicoes/${expedition.slug}`}
         className="link-focus"
-        style={{ display: "grid", gap: "0.9rem" }}
+        style={{ display: "grid", gap: "0.85rem" }}
       >
         <div className="media-frame" style={{ aspectRatio: "4 / 3" }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={expedition.heroImage} alt={expedition.heroAlt} />
+          <img src={expedition.heroImage} alt={expedition.heroAlt} loading="lazy" />
         </div>
         <div>
           <div className="eyebrow">
@@ -23,7 +23,7 @@ export function ExpeditionCard({ expedition }: { expedition: Expedition }) {
             className="display"
             style={{
               margin: "0.45rem 0 0.55rem",
-              fontSize: "clamp(1.55rem, 2.4vw, 2rem)",
+              fontSize: "var(--h3)",
             }}
           >
             {expedition.title}
@@ -38,10 +38,16 @@ export function ExpeditionCard({ expedition }: { expedition: Expedition }) {
             {expedition.tagline}
           </p>
           {expedition.priceFrom ? (
-            <p style={{ margin: "0.8rem 0 0", fontWeight: 700 }}>
+            <p style={{ margin: "0.75rem 0 0", fontWeight: 700 }}>
               A partir de {formatPrice(expedition.priceFrom)}
             </p>
           ) : null}
+          <p
+            className="eyebrow"
+            style={{ margin: "0.85rem 0 0", color: "var(--ocean)" }}
+          >
+            Explore a expedição →
+          </p>
         </div>
       </Link>
     </article>

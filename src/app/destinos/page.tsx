@@ -12,7 +12,7 @@ export default function DestinosPage() {
   const hubs = getAllDestinationHubs();
 
   return (
-    <div style={{ paddingTop: "calc(var(--header-h) + 2rem)" }}>
+    <div className="page-pad">
       <section className="section" style={{ paddingTop: "2rem" }}>
         <div className="container">
           <div className="section-head">

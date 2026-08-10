@@ -28,7 +28,7 @@ const pillars = [
 
 export default function ComoViajamosPage() {
   return (
-    <div style={{ paddingTop: "calc(var(--header-h) + 2rem)" }}>
+    <div className="page-pad">
       <section className="section" style={{ paddingTop: "2rem" }}>
         <div className="container" style={{ maxWidth: "48rem" }}>
           <span className="eyebrow">Método</span>

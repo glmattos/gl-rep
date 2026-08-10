@@ -6,7 +6,7 @@ export const metadata: Metadata = {
 
 export default function TermosPage() {
   return (
-    <div style={{ paddingTop: "calc(var(--header-h) + 2rem)" }}>
+    <div className="page-pad">
       <section className="section" style={{ paddingTop: "2rem" }}>
         <div className="container" style={{ maxWidth: "44rem" }}>
           <h1 className="display">Termos e Condições</h1>

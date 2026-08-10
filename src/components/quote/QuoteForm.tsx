@@ -237,18 +237,13 @@ export function QuoteForm({
           Minhas datas são flexíveis
         </label>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "0.9rem",
-          }}
-        >
+        <div className="form-grid-2">
           <div className="field">
             <label htmlFor="name">Nome</label>
             <input
               id="name"
               required
+              autoComplete="name"
               value={form.name}
               onChange={(event) =>
                 setForm((current) => ({ ...current, name: event.target.value }))
@@ -261,6 +256,7 @@ export function QuoteForm({
               id="phone"
               required
               inputMode="tel"
+              autoComplete="tel"
               placeholder="+55 ..."
               value={form.phone}
               onChange={(event) =>
@@ -283,13 +279,7 @@ export function QuoteForm({
           />
         </div>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "0.9rem",
-          }}
-        >
+        <div className="form-grid-2">
           <div className="field">
             <label htmlFor="travelers">Viajantes</label>
             <input

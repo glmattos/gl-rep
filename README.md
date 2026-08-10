@@ -2,10 +2,10 @@
 
 Redesenvolvimento digital da **ABC Fly Expeditions**: expedições como experiências (não e-commerce), orçamento inteligente e gestão simples de datas.
 
-## Stack (Fase A)
+## Stack
 
 - **Next.js** (App Router) + TypeScript + Tailwind CSS v4
-- Conteúdo local tipado (`content/`) com schemas Sanity prontos (`sanity/`)
+- Conteúdo local tipado (`content/`) com schemas Sanity (`sanity/`)
 - Formulário de orçamento com payload completo (`/api/orcamento`)
 
 ## Desenvolvimento
@@ -25,19 +25,17 @@ Edite apenas:
 content/departures.json
 ```
 
-As páginas de expedição e o formulário de orçamento refletem automaticamente.
-
 ## Rotas principais
 
 | Rota | Função |
 |------|--------|
-| `/` | Home brand-first |
+| `/` | Home narrativa brand-first |
 | `/expedicoes` | Hub de descoberta |
 | `/expedicoes/[slug]` | Página rica da expedição + form |
 | `/solicitar-orcamento` | Orçamento global |
-| `/destinos` / `/destinos/[slug]` | Hubs editoriais de destino |
-| `/atividades` / `/atividades/[slug]` | Hubs editoriais de atividade |
-| `/diario` / `/diario/[slug]` | Blog com expedições relacionadas |
+| `/destinos` / `/destinos/[slug]` | Hubs de destino |
+| `/atividades` / `/atividades/[slug]` | Experiências |
+| `/diario` / `/diario/[slug]` | Conteúdo + expedições relacionadas |
 | `/como-viajamos` / `/depoimentos` / `/sobre` | Marca e confiança |
 | `/loja` | Módulo futuro isolado |
 
@@ -45,6 +43,7 @@ As páginas de expedição e o formulário de orçamento refletem automaticament
 
 - [Auditoria + arquitetura](./docs/AUDITORIA-E-ARQUITETURA.md)
 - [Sanity schemas](./sanity/README.md)
+- Evidências finais em `docs/final/`
 
 ## Scripts
 

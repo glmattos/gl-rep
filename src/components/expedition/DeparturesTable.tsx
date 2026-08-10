@@ -14,12 +14,12 @@ export function DeparturesTable({ departures }: { departures: Departure[] }) {
   }
 
   return (
-    <div style={{ overflowX: "auto" }}>
+    <div className="table-wrap">
       <table
         style={{
           width: "100%",
           borderCollapse: "collapse",
-          minWidth: "560px",
+          minWidth: "520px",
         }}
       >
         <thead>

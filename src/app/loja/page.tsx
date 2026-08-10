@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function LojaPage() {
   return (
-    <div style={{ paddingTop: "calc(var(--header-h) + 2rem)" }}>
+    <div className="page-pad">
       <section className="section" style={{ paddingTop: "2rem" }}>
         <div className="container" style={{ maxWidth: "40rem" }}>
           <span className="eyebrow">Módulo independente</span>

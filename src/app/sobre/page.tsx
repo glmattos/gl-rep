@@ -10,48 +10,21 @@ export const metadata: Metadata = {
 export default function SobrePage() {
   return (
     <>
-      <section
-        style={{
-          position: "relative",
-          minHeight: "70svh",
-          display: "grid",
-          alignItems: "end",
-          color: "var(--snow)",
-        }}
-      >
-        <div style={{ position: "absolute", inset: 0 }}>
+      <section className="hero-shell hero-shell--short">
+        <div className="hero-bg">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             className="hero-media"
             src="/images/hero-trek.jpg"
             alt="Viajantes em expedição na natureza"
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
           />
-          <div
-            style={{
-              position: "absolute",
-              inset: 0,
-              background:
-                "linear-gradient(180deg, rgba(6,20,29,0.25), rgba(6,20,29,0.88))",
-            }}
-          />
+          <div className="hero-overlay" />
         </div>
-        <div
-          className="container"
-          style={{
-            position: "relative",
-            zIndex: 1,
-            paddingBottom: "3rem",
-            paddingTop: "calc(var(--header-h) + 2rem)",
-          }}
-        >
+        <div className="container hero-content">
           <p className="eyebrow" style={{ color: "var(--lime)" }}>
             Quem somos
           </p>
-          <h1
-            className="display"
-            style={{ fontSize: "clamp(2.8rem, 7vw, 5rem)", maxWidth: "14ch" }}
-          >
+          <h1 className="display hero-title" style={{ maxWidth: "14ch" }}>
             Uma comunidade de exploradores
           </h1>
         </div>

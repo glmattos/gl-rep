@@ -7,10 +7,9 @@ import { useEffect, useState } from "react";
 const nav = [
   { href: "/expedicoes", label: "Expedições" },
   { href: "/destinos", label: "Destinos" },
-  { href: "/atividades", label: "Atividades" },
+  { href: "/atividades", label: "Experiências" },
   { href: "/diario", label: "Diário" },
   { href: "/sobre", label: "Sobre" },
-  { href: "/contato", label: "Contato" },
 ];
 
 export function SiteHeader() {
@@ -24,6 +23,15 @@ export function SiteHeader() {
     pathname === "/sobre";
   const [solid, setSolid] = useState(!isImmersive);
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    document.body.classList.toggle("nav-open", open);
+    return () => document.body.classList.remove("nav-open");
+  }, [open]);
 
   useEffect(() => {
     const onScroll = () => {
@@ -40,18 +48,31 @@ export function SiteHeader() {
 
   return (
     <header className={`site-header ${solid || !isImmersive ? "is-solid" : ""}`}>
-      <div className="container header-inner" style={{ color: "var(--snow)" }}>
-        <Link href="/" className="link-focus brand-lockup" aria-label="ABC Fly Expeditions — início">
+      <div className="container header-inner">
+        <Link
+          href="/"
+          className="link-focus brand-lockup"
+          aria-label="ABC Fly Expeditions — início"
+        >
           <span className="brand-top">ABC FLY</span>
           <span className="brand-bottom">EXPEDITIONS</span>
         </Link>
 
         <nav aria-label="Principal" className="desktop-nav">
-          {nav.map((item) => (
-            <Link key={item.href} href={item.href} className="nav-link link-focus">
-              {item.label}
-            </Link>
-          ))}
+          {nav.map((item) => {
+            const current =
+              pathname === item.href || pathname.startsWith(`${item.href}/`);
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="nav-link link-focus"
+                aria-current={current ? "page" : undefined}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
           <Link href="/solicitar-orcamento" className="btn btn-primary link-focus">
             Solicitar orçamento
           </Link>
@@ -64,7 +85,7 @@ export function SiteHeader() {
           aria-controls="mobile-nav"
           onClick={() => setOpen((value) => !value)}
         >
-          Menu
+          {open ? "Fechar" : "Menu"}
         </button>
       </div>
 
@@ -81,12 +102,28 @@ export function SiteHeader() {
             </Link>
           ))}
           <Link
+            href="/contato"
+            className="nav-link"
+            onClick={() => setOpen(false)}
+          >
+            Contato
+          </Link>
+          <Link
             href="/solicitar-orcamento"
             className="btn btn-primary"
             onClick={() => setOpen(false)}
           >
             Solicitar orçamento
           </Link>
+          <a
+            href="https://wa.me/5511915285462"
+            className="btn btn-secondary"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setOpen(false)}
+          >
+            Falar com especialista
+          </a>
         </div>
       ) : null}
     </header>
