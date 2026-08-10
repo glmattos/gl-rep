@@ -1,4 +1,7 @@
-Preview ao vivo (túnel Cloudflare — efêmero):
+Preview ao vivo:
+https://abcfly-expeditions.loca.lt
+
+Alternativa Cloudflare (pode exigir DNS externo):
 https://readers-portion-wherever-determine.trycloudflare.com
 
 Branch: cursor/abc-fly-platform-audit-ba5a
