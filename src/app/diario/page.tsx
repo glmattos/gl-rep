@@ -6,7 +6,7 @@ import { formatDate } from "@/lib/format";
 export const metadata: Metadata = {
   title: "Diário",
   description:
-    "Inspiração, planejamento e autoridade — o diário de viagens da ABC Fly Expeditions.",
+    "Stories, guias e relatos de exploração — o universo editorial da ABC Fly Expeditions.",
 };
 
 export default function DiarioPage() {
@@ -17,11 +17,11 @@ export default function DiarioPage() {
       <section className="section" style={{ paddingTop: "2rem" }}>
         <div className="container">
           <div className="section-head">
-            <span className="eyebrow">Inspiração integrada</span>
+            <span className="eyebrow">Universo editorial</span>
             <h1 className="display">Diário</h1>
             <p>
-              Artigos que estimulam desejo, ajudam a planejar e conectam
-              diretamente às expedições.
+              Blog + travel stories + guides. Conteúdo que aumenta o desejo de
+              viajar — e conecta cada história a uma expedição real.
             </p>
           </div>
           <div className="card-grid">
@@ -34,10 +34,17 @@ export default function DiarioPage() {
                 >
                   <div className="media-frame" style={{ aspectRatio: "16 / 10" }}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={post.heroImage} alt={post.title} />
+                    <img src={post.heroImage} alt={post.title} loading="lazy" />
                   </div>
                   <div>
-                    <span className="eyebrow">{formatDate(post.publishedAt)}</span>
+                    <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
+                      <span className="eyebrow">{formatDate(post.publishedAt)}</span>
+                      {post.tags.slice(0, 2).map((tag) => (
+                        <span key={tag} className="eyebrow">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                     <h2
                       className="display"
                       style={{ margin: "0.4rem 0", fontSize: "1.8rem" }}

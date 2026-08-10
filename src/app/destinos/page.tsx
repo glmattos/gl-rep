@@ -5,7 +5,7 @@ import { getAllDestinationHubs, getExpeditionsForDestination } from "@/lib/conte
 export const metadata: Metadata = {
   title: "Destinos",
   description:
-    "Explore expedições ABC Fly por continente — Antártica, América, África, Ásia e Europa.",
+    "Explore destinos ABC Fly — Nepal, Peru, Costa Rica, Tanzânia, Antártica e mais.",
 };
 
 export default function DestinosPage() {
@@ -16,11 +16,11 @@ export default function DestinosPage() {
       <section className="section" style={{ paddingTop: "2rem" }}>
         <div className="container">
           <div className="section-head">
-            <span className="eyebrow">Mapa do desejo</span>
+            <span className="eyebrow">Descoberta</span>
             <h1 className="display">Destinos</h1>
             <p>
-              Escolha um horizonte. Cada destino abre um conjunto de expedições
-              com curadoria — e um caminho claro para o orçamento.
+              Países e continentes com expedições reais. Busque Nepal, Peru,
+              Costa Rica, Tanzânia — e entre na jornada daquele lugar.
             </p>
           </div>
           <div className="card-grid">

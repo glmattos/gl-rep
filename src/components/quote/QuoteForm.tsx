@@ -9,6 +9,8 @@ type Props = {
   departures?: Departure[];
   expeditions?: Expedition[];
   pageUrl?: string;
+  /** Quando true, o seletor de expedição fica oculto (já escolhida via busca) */
+  hideExpeditionSelect?: boolean;
 };
 
 type FormState = {
@@ -29,6 +31,7 @@ export function QuoteForm({
   departures = [],
   expeditions = [],
   pageUrl = "",
+  hideExpeditionSelect = false,
 }: Props) {
   const initialSlug = expedition?.slug ?? expeditions[0]?.slug ?? "";
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
@@ -83,6 +86,7 @@ export function QuoteForm({
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          leadType: "expedition",
           name: form.name,
           email: form.email,
           phone: form.phone,
@@ -141,16 +145,29 @@ export function QuoteForm({
   return (
     <form className="quote-panel" style={{ padding: "1.5rem" }} onSubmit={onSubmit}>
       <p className="eyebrow">Orçamento personalizado</p>
-      <h3 className="display" style={{ fontSize: "2rem", margin: "0.35rem 0 0.4rem" }}>
+      <h3 className="display" style={{ fontSize: "1.85rem", margin: "0.35rem 0 0.4rem" }}>
         Solicitar orçamento
       </h3>
       <p style={{ margin: "0 0 1.25rem", color: "var(--stone)", lineHeight: 1.6 }}>
-        Sem carrinho. Sem compra online. Nossa equipe prepara sua proposta com
-        base na expedição, data e perfil do grupo.
+        Sem carrinho. Sem compra online. A equipe prepara sua proposta com base
+        na expedição, data e perfil do grupo.
       </p>
 
       <div style={{ display: "grid", gap: "0.9rem" }}>
-        {!expedition ? (
+        {expedition || hideExpeditionSelect ? (
+          <div
+            style={{
+              padding: "0.85rem 1rem",
+              background: "var(--navy)",
+              color: "var(--snow)",
+            }}
+          >
+            <div className="eyebrow" style={{ color: "var(--lime)" }}>
+              Expedição
+            </div>
+            <strong>{selectedExpedition?.title}</strong>
+          </div>
+        ) : (
           <div className="field">
             <label htmlFor="expeditionSlug">Expedição</label>
             <select
@@ -171,19 +188,6 @@ export function QuoteForm({
                 </option>
               ))}
             </select>
-          </div>
-        ) : (
-          <div
-            style={{
-              padding: "0.85rem 1rem",
-              background: "var(--navy)",
-              color: "var(--snow)",
-            }}
-          >
-            <div className="eyebrow" style={{ color: "var(--lime)" }}>
-              Expedição
-            </div>
-            <strong>{expedition.title}</strong>
           </div>
         )}
 

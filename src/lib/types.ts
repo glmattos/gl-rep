@@ -56,20 +56,31 @@ export interface Departure {
   seatsLeft?: number;
 }
 
+export type QuoteLeadType = "expedition" | "custom";
+
 export interface QuoteRequestPayload {
+  leadType: QuoteLeadType;
   name: string;
   email: string;
   phone: string;
-  expeditionSlug: string;
-  expeditionTitle: string;
+  expeditionSlug?: string;
+  expeditionTitle?: string;
   departureId?: string;
   departureLabel?: string;
-  flexibleDates: boolean;
+  flexibleDates?: boolean;
   travelers: number;
   profile: "solo" | "casal" | "familia" | "grupo";
   message: string;
   pageUrl: string;
   consent: boolean;
+  /** Campos da viagem personalizada */
+  desiredDestination?: string;
+  period?: string;
+  duration?: string;
+  budgetRange?: string;
+  interests?: string[];
+  experienceType?: string;
+  adventureLevel?: string;
 }
 
 export interface DestinationHub {

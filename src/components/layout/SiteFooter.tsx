@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export function SiteFooter() {
@@ -13,27 +14,43 @@ export function SiteFooter() {
       <div className="container" style={{ display: "grid", gap: "2.5rem" }}>
         <div className="footer-grid">
           <div>
-            <div style={{ marginBottom: "1rem" }}>
-              <div style={{ fontWeight: 800, letterSpacing: "0.14em" }}>ABC FLY</div>
-              <div
-                style={{
-                  color: "var(--lime)",
-                  letterSpacing: "0.2em",
-                  fontSize: "0.75rem",
-                  fontWeight: 700,
-                }}
-              >
-                EXPEDITIONS
+            <div
+              style={{
+                marginBottom: "1rem",
+                display: "flex",
+                alignItems: "center",
+                gap: "0.7rem",
+              }}
+            >
+              <Image
+                src="/brand/logo-mark-sm.png"
+                alt=""
+                width={240}
+                height={127}
+                style={{ width: "3rem", height: "auto" }}
+              />
+              <div>
+                <div style={{ fontWeight: 800, letterSpacing: "0.14em" }}>ABC FLY</div>
+                <div
+                  style={{
+                    color: "var(--lime)",
+                    letterSpacing: "0.2em",
+                    fontSize: "0.72rem",
+                    fontWeight: 700,
+                  }}
+                >
+                  EXPEDITIONS
+                </div>
               </div>
             </div>
             <p style={{ maxWidth: "28rem", lineHeight: 1.7, opacity: 0.84 }}>
-              Expedições de aventura com curadoria, segurança e sofisticação.
-              Onde o mapa não grita — sussurra.
+              Marca de exploração. Expedições autênticas com curadoria, segurança
+              e liberdade — onde o mapa não grita, sussurra.
             </p>
             <p
+              className="display"
               style={{
                 marginTop: "1rem",
-                fontFamily: "var(--font-display), serif",
                 fontSize: "1.35rem",
               }}
             >
@@ -49,8 +66,8 @@ export function SiteFooter() {
               <Link href="/expedicoes">Expedições</Link>
               <Link href="/destinos">Destinos</Link>
               <Link href="/atividades">Experiências</Link>
-              <Link href="/contato">Contato</Link>
               <Link href="/diario">Diário</Link>
+              <Link href="/contato">Contato</Link>
             </div>
           </div>
 
@@ -62,7 +79,6 @@ export function SiteFooter() {
               <Link href="/sobre">Sobre</Link>
               <Link href="/como-viajamos">Como viajamos</Link>
               <Link href="/depoimentos">Depoimentos</Link>
-              <Link href="/contato">Contato</Link>
               <Link href="/solicitar-orcamento">Solicitar orçamento</Link>
               <Link href="/loja" style={{ opacity: 0.7 }}>
                 Equipamentos (em breve)

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ExpeditionCard } from "@/components/ui/ExpeditionCard";
 import {
@@ -50,11 +51,36 @@ export default async function ActivityDetailPage({ params }: Props) {
             <h2 className="display">Expedições de {hub.name}</h2>
             <p>{hub.summary}</p>
           </div>
-          <div className="card-grid">
-            {expeditions.map((expedition) => (
-              <ExpeditionCard key={expedition.slug} expedition={expedition} />
-            ))}
-          </div>
+          {expeditions.length ? (
+            <div className="card-grid">
+              {expeditions.map((expedition) => (
+                <ExpeditionCard key={expedition.slug} expedition={expedition} />
+              ))}
+            </div>
+          ) : (
+            <div className="panel" style={{ padding: "1.5rem", maxWidth: "40rem" }}>
+              <p className="eyebrow">Em curadoria</p>
+              <h3 className="display" style={{ fontSize: "1.7rem", margin: "0.4rem 0 0.7rem" }}>
+                Estrutura pronta para {hub.name}
+              </h3>
+              <p style={{ margin: "0 0 1rem", color: "var(--stone)", lineHeight: 1.7 }}>
+                Esta experiência faz parte do universo ABC Fly. As expedições
+                específicas desta categoria serão publicadas com fotografias e
+                roteiros reais — sem preencher com conteúdo genérico.
+              </p>
+              <div className="btn-row">
+                <Link
+                  href={`/solicitar-orcamento`}
+                  className="btn btn-primary"
+                >
+                  Quero criar minha viagem
+                </Link>
+                <Link href="/expedicoes" className="btn btn-dark">
+                  Ver expedições disponíveis
+                </Link>
+              </div>
+            </div>
+          )}
         </div>
       </section>
     </>

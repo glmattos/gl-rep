@@ -1,14 +1,19 @@
 import type { Metadata } from "next";
-import { QuoteForm } from "@/components/quote/QuoteForm";
+import { QuoteExperience } from "@/components/quote/QuoteExperience";
 import { getAllDepartures, getAllExpeditions } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Solicitar orçamento",
   description:
-    "Peça um orçamento personalizado para expedições ABC Fly. A equipe recebe expedição, data e perfil do grupo automaticamente.",
+    "Encontre uma expedição ou peça uma viagem personalizada. A ABC Fly registra seu lead e retorna com proposta humana.",
 };
 
-export default function QuotePage() {
+type Props = {
+  searchParams?: Promise<{ expedicao?: string }>;
+};
+
+export default async function QuotePage({ searchParams }: Props) {
+  const params = searchParams ? await searchParams : {};
   const expeditions = getAllExpeditions();
   const departures = getAllDepartures();
 
@@ -17,24 +22,44 @@ export default function QuotePage() {
       <section className="section" style={{ paddingTop: "2rem" }}>
         <div className="container quote-page-grid">
           <div>
-            <span className="eyebrow">Conversão principal</span>
-            <h1 className="display" style={{ fontSize: "clamp(2.6rem, 6vw, 4.4rem)" }}>
+            <span className="eyebrow">Comece por aqui</span>
+            <h1
+              className="display"
+              style={{ fontSize: "clamp(2.4rem, 5.5vw, 4rem)", margin: "0.4rem 0 1rem" }}
+            >
               Solicitar orçamento
             </h1>
-            <p style={{ lineHeight: 1.75, maxWidth: "36rem", fontSize: "1.08rem" }}>
-              A ABC Fly não vende expedições por carrinho. Cada proposta é
-              montada com base na jornada, na data e no perfil do grupo. Ao
-              enviar, nossa equipe já recebe o contexto completo — sem precisar
-              descobrir manualmente a origem do contato.
+            <p style={{ lineHeight: 1.75, maxWidth: "36rem", fontSize: "1.05rem" }}>
+              A ABC Fly não vende expedições por carrinho. Você encontra uma
+              jornada existente ou pede um roteiro do zero — e a equipe recebe o
+              contexto completo para responder.
             </p>
             <ul style={{ lineHeight: 1.9, paddingLeft: "1.1rem", color: "var(--stone)" }}>
-              <li>Nome da expedição incluso automaticamente</li>
-              <li>Data escolhida ou datas flexíveis</li>
-              <li>Número de viajantes e perfil do grupo</li>
+              <li>Busca inteligente por destino ou interesse</li>
+              <li>Ou viagem 100% personalizada</li>
+              <li>Lead registrado com expedição/interesse e contato</li>
               <li>Retorno humano em até 1 dia útil</li>
             </ul>
+            <div
+              className="panel"
+              style={{ marginTop: "1.5rem", padding: "1.1rem 1.2rem", maxWidth: "36rem" }}
+            >
+              <p className="eyebrow" style={{ margin: 0 }}>
+                Para onde vai o lead?
+              </p>
+              <p style={{ margin: "0.55rem 0 0", lineHeight: 1.65, color: "var(--stone)" }}>
+                Cada solicitação é gravada em registro estruturado no servidor
+                (`content/leads`), com tipo (expedição ou personalizada), interesse,
+                dados de contato e mensagem. A equipe acompanha por e-mail/WhatsApp
+                operacional e pode conectar CRM depois — sem inventar integração.
+              </p>
+            </div>
           </div>
-          <QuoteForm expeditions={expeditions} departures={departures} />
+          <QuoteExperience
+            expeditions={expeditions}
+            departures={departures}
+            initialSlug={params.expedicao}
+          />
         </div>
       </section>
     </div>

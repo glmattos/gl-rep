@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import { Figtree, Newsreader } from "next/font/google";
+import { Outfit, Syne } from "next/font/google";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import "./globals.css";
 
-const sans = Figtree({
+const sans = Outfit({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
 });
 
-const display = Newsreader({
+const display = Syne({
   subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s | ABC Fly Expeditions",
   },
   description:
-    "Expedições de aventura com curadoria, segurança e sofisticação. Explore destinos no Brasil e no mundo e solicite um orçamento personalizado.",
+    "Expedições de aventura autênticas. Explore destinos no Brasil e no mundo e solicite um orçamento personalizado com a ABC Fly Expeditions.",
   metadataBase: new URL("https://www.abcflyexpeditions.com"),
   openGraph: {
     title: "ABC Fly Expeditions",

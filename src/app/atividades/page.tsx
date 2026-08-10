@@ -41,7 +41,9 @@ export default function AtividadesPage() {
                   </div>
                   <div>
                     <span className="eyebrow">
-                      {count} {count === 1 ? "expedição" : "expedições"}
+                      {count
+                        ? `${count} ${count === 1 ? "expedição" : "expedições"}`
+                        : "Em curadoria"}
                     </span>
                     <h2
                       className="display"

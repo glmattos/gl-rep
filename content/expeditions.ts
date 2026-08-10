@@ -256,13 +256,16 @@ export const expeditions: Expedition[] = [
       "Trekking clássico ao Everest Base Camp com aclimatização, vilarejos sherpa, mosteiros e o cenário do Khumbu.",
     story:
       "Mais do que chegar ao acampamento base, esta jornada é um encontro com a cultura sherpa, a altitude e a escala do Himalaia. Roteiro adaptável, pensado para segurança e presença — não para corrida.",
-    heroImage:
-      "/images/hero-alaska.jpg",
+    heroImage: "/images/hero-nepal.jpg",
     heroAlt: "Picos do Himalaia no Nepal",
     gallery: [
       {
         src: "/images/hero-trek.jpg",
         alt: "Trilha de montanha no Nepal",
+      },
+      {
+        src: "/images/originals/everest-1.jpg",
+        alt: "Paisagem do Everest",
       },
       {
         src: "/images/gallery-mountain.jpg",
@@ -585,13 +588,16 @@ export const expeditions: Expedition[] = [
       "Expedição ao Uhuru Peak pela Lemosho: melhor aclimatização, floresta equatorial, moorland e geleiras remanescentes.",
     story:
       "O Kilimanjaro não é só altitude — é uma travessia de ecossistemas. A Lemosho oferece ritmo mais humano e paisagens amplas, com equipe local experiente e protocolo de segurança rigoroso.",
-    heroImage:
-      "/images/hero-africa.jpg",
+    heroImage: "/images/hero-kilimanjaro.jpg",
     heroAlt: "Amanhecer no Kilimanjaro",
     gallery: [
       {
         src: "/images/hero-africa.jpg",
-        alt: "Savana africana",
+        alt: "Horizonte africano",
+      },
+      {
+        src: "/images/hero-kilimanjaro.jpg",
+        alt: "Kilimanjaro",
       },
     ],
     destinations: ["África", "Tanzânia"],
@@ -702,7 +708,7 @@ export const expeditions: Expedition[] = [
       "Caminhadas inspiradas no Circuito W com base no EcoCamp Patagonia: Vale Ascencio, Vale do Francês e Mirante Grey.",
     story:
       "Torres del Paine é uma das trilhas mais deslumbrantes do planeta. Este roteiro curto concentra os três setores mais impressionantes do parque, com hospedagem sustentável e ritmo exigente — sem técnica de escalada, mas com bom condicionamento.",
-    heroImage: "/images/gallery-mountain.jpg",
+    heroImage: "/images/hero-patagonia.jpg",
     heroAlt: "Montanhas da Patagônia chilena",
     gallery: [
       {
@@ -791,7 +797,7 @@ export const expeditions: Expedition[] = [
       "Cruzeiro boutique pela Amazônia peruana a partir de Iquitos: amanheceres no rio, exploracões em ignição e selva em ritmo intimista.",
     story:
       "Iquitos é a porta de entrada para o Rio Amazonas. A bordo do Aria, a navegação pelos afluentes revela uma floresta que se escuta antes de se ver — com conforto de expedição e curadoria de natureza.",
-    heroImage: "/images/gallery-ocean.jpg",
+    heroImage: "/images/hero-forest.jpg",
     heroAlt: "Águas e floresta em clima de expedição",
     gallery: [
       {
@@ -875,7 +881,7 @@ export const expeditions: Expedition[] = [
       "Rovaniemi na Lapônia finlandesa: natureza branca, iglus de vidro e a busca pela aurora boreal.",
     story:
       "A Finlândia no inverno é um convite à quietude. Entre paisagens cobertas de neve e a possibilidade de dormir sob o céu polar, Rovaniemi oferece uma aventura sofisticada — mais contemplativa, igualmente inesquecível.",
-    heroImage: "/images/hero-antarctica.jpg",
+    heroImage: "/images/hero-ice.jpg",
     heroAlt: "Céu polar e paisagem nevada",
     gallery: [
       {
@@ -1071,7 +1077,7 @@ export const expeditions: Expedition[] = [
       "Oito dias entre tradições de Bali, rafting, vilarejos e dias de praia em Gili/Lombok.",
     story:
       "Bali não é só praia — é ritual, arrozal e vulcão. Somada a Gili e Lombok, a travessia equilibra cultura, água e tempo lento no arquipélago indonésio.",
-    heroImage: "/images/gallery-ocean.jpg",
+    heroImage: "/images/hero-surf.jpg",
     heroAlt: "Mar turquesa e costa tropical",
     gallery: [
       {
