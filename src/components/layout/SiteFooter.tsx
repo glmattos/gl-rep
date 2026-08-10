@@ -1,0 +1,97 @@
+import Link from "next/link";
+
+export function SiteFooter() {
+  return (
+    <footer
+      style={{
+        background: "var(--navy-deep)",
+        color: "var(--snow)",
+        padding: "4rem 0 2rem",
+        marginTop: "4rem",
+      }}
+    >
+      <div className="container" style={{ display: "grid", gap: "2.5rem" }}>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1.4fr 1fr 1fr",
+            gap: "2rem",
+          }}
+          className="footer-grid"
+        >
+          <div>
+            <div style={{ marginBottom: "1rem" }}>
+              <div style={{ fontWeight: 800, letterSpacing: "0.14em" }}>ABC FLY</div>
+              <div
+                style={{
+                  color: "var(--lime)",
+                  letterSpacing: "0.2em",
+                  fontSize: "0.75rem",
+                  fontWeight: 700,
+                }}
+              >
+                EXPEDITIONS
+              </div>
+            </div>
+            <p style={{ maxWidth: "28rem", lineHeight: 1.7, opacity: 0.84 }}>
+              Expedições de aventura com curadoria, segurança e sofisticação.
+              Onde o mapa não grita — sussurra.
+            </p>
+            <p
+              style={{
+                marginTop: "1rem",
+                fontFamily: "var(--font-display), serif",
+                fontSize: "1.35rem",
+              }}
+            >
+              Explore Everything.
+            </p>
+          </div>
+
+          <div>
+            <div className="eyebrow" style={{ color: "var(--lime)", marginBottom: "0.9rem" }}>
+              Explorar
+            </div>
+            <div style={{ display: "grid", gap: "0.55rem" }}>
+              <Link href="/expedicoes">Expedições</Link>
+              <Link href="/destinos">Destinos</Link>
+              <Link href="/atividades">Atividades</Link>
+              <Link href="/diario">Diário</Link>
+            </div>
+          </div>
+
+          <div>
+            <div className="eyebrow" style={{ color: "var(--lime)", marginBottom: "0.9rem" }}>
+              Empresa
+            </div>
+            <div style={{ display: "grid", gap: "0.55rem" }}>
+              <Link href="/sobre">Sobre</Link>
+              <Link href="/contato">Contato</Link>
+              <Link href="/solicitar-orcamento">Solicitar orçamento</Link>
+              <Link href="/loja" style={{ opacity: 0.7 }}>
+                Equipamentos (em breve)
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        <div
+          style={{
+            borderTop: "1px solid var(--line-light)",
+            paddingTop: "1.25rem",
+            display: "flex",
+            justifyContent: "space-between",
+            gap: "1rem",
+            flexWrap: "wrap",
+            fontSize: "0.85rem",
+            opacity: 0.72,
+          }}
+        >
+          <span>© {new Date().getFullYear()} ABC Fly Expeditions</span>
+          <span>Braço de aventura da ABC FLY Viagens e Turismo · Cadastur</span>
+        </div>
+      </div>
+
+      </footer>
+  );
+}
