@@ -20,30 +20,31 @@ export type SearchResult = {
   score: number;
 };
 
+/** Sinônimos: chave = termo digitado, valores = expansões relacionadas */
 const ALIASES: Record<string, string[]> = {
-  nepal: ["himalaia", "everest", "asia", "ásia", "trekking", "mochilao", "mochilão"],
-  peru: ["amazonia", "amazônia", "andes", "america do sul", "américa do sul"],
-  "costa rica": ["america central", "américa central", "pura vida", "selva"],
-  tanzania: ["tanzânia", "kilimanjaro", "africa", "áfrica", "trekking"],
-  tanzânia: ["tanzania", "kilimanjaro", "africa", "áfrica"],
-  "africa do sul": ["áfrica do sul", "africa", "áfrica", "safari"],
-  indonésia: ["indonesia", "bali", "lombok", "gili", "surf", "asia", "ásia"],
-  indonesia: ["indonésia", "bali", "lombok", "gili", "surf"],
-  portugal: ["europa", "surf", "europe"],
-  africa: ["áfrica", "tanzânia", "tanzania", "kilimanjaro", "safari", "wildlife"],
+  nepal: ["himalaia", "everest", "khumbu"],
+  peru: ["amazonia", "amazônia", "andes", "iquitos"],
+  "costa rica": ["pura vida"],
+  tanzania: ["tanzânia", "kilimanjaro"],
+  tanzânia: ["tanzania", "kilimanjaro"],
+  "africa do sul": ["áfrica do sul", "safari"],
+  indonésia: ["indonesia", "bali", "lombok", "gili"],
+  indonesia: ["indonésia", "bali", "lombok", "gili"],
+  portugal: ["europa", "surf"],
+  africa: ["áfrica", "tanzânia", "tanzania", "kilimanjaro", "safari"],
   áfrica: ["africa", "tanzânia", "tanzania", "kilimanjaro", "safari"],
-  surf: ["onda", "praia", "indonésia", "indonesia", "costa", "mar"],
-  safari: ["wildlife", "natureza", "africa", "áfrica", "vida selvagem"],
-  mochilao: ["mochilão", "backpacking", "trekking", "nepal", "aventura"],
-  mochilão: ["mochilao", "backpacking", "trekking", "nepal", "aventura"],
-  voluntariado: ["volunteer", "comunidade", "impacto"],
-  expedicao: ["expedição", "expedicoes", "expedições", "viagem", "roteiro"],
-  expedição: ["expedicao", "expedicoes", "expedições", "viagem", "roteiro"],
-  antartica: ["antártica", "antarctica", "polar", "pinguim", "drake"],
-  antártica: ["antartica", "antarctica", "polar", "pinguim", "drake"],
-  patagonia: ["patagônia", "chile", "torres del paine", "america do sul"],
-  patagônia: ["patagonia", "chile", "torres del paine"],
-  alasca: ["alaska", "silversea", "america do norte", "glaciar"],
+  surf: ["onda", "praia", "bali", "indonésia", "indonesia"],
+  safari: ["wildlife", "vida selvagem", "áfrica", "africa"],
+  mochilao: ["mochilão", "backpacking"],
+  mochilão: ["mochilao", "backpacking"],
+  voluntariado: ["volunteer", "impacto"],
+  expedicao: ["expedição", "expedicoes", "expedições"],
+  expedição: ["expedicao", "expedicoes", "expedições"],
+  antartica: ["antártica", "antarctica", "polar", "drake"],
+  antártica: ["antartica", "antarctica", "polar", "drake"],
+  patagonia: ["patagônia", "torres del paine", "chile"],
+  patagônia: ["patagonia", "torres del paine", "chile"],
+  alasca: ["alaska", "silversea", "glaciar"],
 };
 
 function normalize(value: string): string {
@@ -54,48 +55,72 @@ function normalize(value: string): string {
     .trim();
 }
 
-function expandQuery(query: string): string[] {
+function expandQuery(query: string): { primary: string[]; related: string[] } {
   const base = normalize(query);
-  if (!base) return [];
-  const tokens = new Set<string>([base, ...base.split(/\s+/).filter(Boolean)]);
+  if (!base) return { primary: [], related: [] };
+
+  const primary = new Set<string>([base, ...base.split(/\s+/).filter((t) => t.length > 1)]);
+  const related = new Set<string>();
+
   for (const [key, values] of Object.entries(ALIASES)) {
     const keyNorm = normalize(key);
-    if (base.includes(keyNorm) || keyNorm.includes(base)) {
-      tokens.add(keyNorm);
-      values.forEach((item) => tokens.add(normalize(item)));
-    }
-    for (const value of values) {
-      const valueNorm = normalize(value);
-      if (base.includes(valueNorm) || valueNorm.includes(base)) {
-        tokens.add(keyNorm);
-        tokens.add(valueNorm);
-      }
+    const keyHit =
+      base === keyNorm ||
+      base.includes(keyNorm) ||
+      keyNorm.includes(base) ||
+      values.some((value) => {
+        const valueNorm = normalize(value);
+        return base === valueNorm || base.includes(valueNorm);
+      });
+
+    if (keyHit) {
+      primary.add(keyNorm);
+      values.forEach((item) => related.add(normalize(item)));
     }
   }
-  return [...tokens];
+
+  return { primary: [...primary], related: [...related] };
 }
 
-function scoreText(haystack: string, tokens: string[]): number {
-  const text = normalize(haystack);
+function scoreFields(
+  fields: { text: string; weight: number }[],
+  primary: string[],
+  related: string[],
+): number {
   let score = 0;
-  for (const token of tokens) {
-    if (!token) continue;
-    if (text === token) score += 12;
-    else if (text.startsWith(token)) score += 8;
-    else if (text.includes(token)) score += 5;
+  for (const field of fields) {
+    const text = normalize(field.text);
+    for (const token of primary) {
+      if (!token) continue;
+      if (text === token) score += 14 * field.weight;
+      else if (text.startsWith(token)) score += 10 * field.weight;
+      else if (text.includes(token)) score += 7 * field.weight;
+    }
+    for (const token of related) {
+      if (!token || primary.includes(token)) continue;
+      if (text.includes(token)) score += 3 * field.weight;
+    }
   }
   return score;
 }
 
 export function searchSite(query: string, limit = 24): SearchResult[] {
-  const tokens = expandQuery(query);
-  if (!tokens.length) return [];
+  const { primary, related } = expandQuery(query);
+  if (!primary.length) return [];
 
   const results: SearchResult[] = [];
 
   for (const hub of getAllDestinationHubs()) {
-    const blob = [hub.name, hub.tagline, hub.summary, ...hub.matchLabels].join(" ");
-    const score = scoreText(blob, tokens);
+    const score = scoreFields(
+      [
+        { text: hub.name, weight: 3 },
+        { text: hub.matchLabels.join(" "), weight: 2.4 },
+        { text: hub.tagline, weight: 1.2 },
+        { text: hub.summary, weight: 0.8 },
+      ],
+      primary,
+      related,
+    );
     if (score > 0) {
       results.push({
         kind: "destino",
@@ -103,21 +128,24 @@ export function searchSite(query: string, limit = 24): SearchResult[] {
         subtitle: hub.tagline,
         href: `/destinos/${hub.slug}`,
         image: hub.heroImage,
-        score: score + 2,
+        score: score + 4,
       });
     }
   }
 
   for (const expedition of getAllExpeditions()) {
-    const blob = [
-      expedition.title,
-      expedition.tagline,
-      expedition.summary,
-      ...expedition.destinations,
-      ...expedition.activities,
-      ...expedition.highlights,
-    ].join(" ");
-    const score = scoreText(blob, tokens);
+    const score = scoreFields(
+      [
+        { text: expedition.title, weight: 3 },
+        { text: expedition.destinations.join(" "), weight: 2.6 },
+        { text: expedition.tagline, weight: 1.3 },
+        { text: expedition.activities.join(" "), weight: 1.1 },
+        { text: expedition.summary, weight: 0.9 },
+        { text: expedition.highlights.join(" "), weight: 0.8 },
+      ],
+      primary,
+      related,
+    );
     if (score > 0) {
       results.push({
         kind: "expedicao",
@@ -125,14 +153,22 @@ export function searchSite(query: string, limit = 24): SearchResult[] {
         subtitle: `${expedition.destinations.join(" · ")} · ${expedition.durationDays} dias`,
         href: `/expedicoes/${expedition.slug}`,
         image: expedition.heroImage,
-        score: score + 3,
+        score: score + 5,
       });
     }
   }
 
   for (const hub of getAllActivityHubs()) {
-    const blob = [hub.name, hub.tagline, hub.summary, ...hub.matchLabels].join(" ");
-    const score = scoreText(blob, tokens);
+    const score = scoreFields(
+      [
+        { text: hub.name, weight: 3 },
+        { text: hub.matchLabels.join(" "), weight: 2 },
+        { text: hub.tagline, weight: 1.2 },
+        { text: hub.summary, weight: 0.8 },
+      ],
+      primary,
+      related,
+    );
     if (score > 0) {
       results.push({
         kind: "experiencia",
@@ -146,8 +182,16 @@ export function searchSite(query: string, limit = 24): SearchResult[] {
   }
 
   for (const post of getAllPosts()) {
-    const blob = [post.title, post.excerpt, ...post.tags, ...post.body].join(" ");
-    const score = scoreText(blob, tokens);
+    const score = scoreFields(
+      [
+        { text: post.title, weight: 2.5 },
+        { text: post.tags.join(" "), weight: 2 },
+        { text: post.excerpt, weight: 1.2 },
+        { text: post.body.join(" "), weight: 0.6 },
+      ],
+      primary,
+      related,
+    );
     if (score > 0) {
       results.push({
         kind: "diario",

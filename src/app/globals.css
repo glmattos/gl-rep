@@ -1068,16 +1068,20 @@ button:focus-visible {
     font-size: 0.68rem;
   }
 
-  .whatsapp-float {
-    bottom: calc(4.8rem + env(safe-area-inset-bottom));
-  }
-
   .hero-shell {
     min-height: 100svh;
   }
 
   .hero-shell--short {
     min-height: 68svh;
+  }
+
+  .hero-content {
+    padding-bottom: calc(5.5rem + env(safe-area-inset-bottom));
+  }
+
+  .whatsapp-float {
+    bottom: calc(5.25rem + env(safe-area-inset-bottom));
   }
 
   .quote-panel,
