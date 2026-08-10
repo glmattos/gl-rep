@@ -1,5 +1,5 @@
 Preview ao vivo (túnel Cloudflare — efêmero):
-https://rose-founder-gold-ddr.trycloudflare.com
+https://readers-portion-wherever-determine.trycloudflare.com
 
 Branch: cursor/abc-fly-platform-audit-ba5a
 Servidor local: http://127.0.0.1:3000
