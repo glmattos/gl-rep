@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { DeparturesTable } from "@/components/expedition/DeparturesTable";
 import { QuoteForm } from "@/components/quote/QuoteForm";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { ExpeditionCard } from "@/components/ui/ExpeditionCard";
 import {
   getAllExpeditions,
@@ -40,9 +41,53 @@ export default async function ExpeditionPage({ params }: Props) {
 
   const departures = getDeparturesForExpedition(expedition.slug);
   const related = getRelatedExpeditions(expedition);
+  const pageUrl = `https://www.abcflyexpeditions.com/expedicoes/${expedition.slug}`;
 
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "TouristTrip",
+          name: expedition.title,
+          description: expedition.summary,
+          image: expedition.heroImage,
+          touristType: expedition.activities.join(", "),
+          itinerary: expedition.dayByDay.map((day) => ({
+            "@type": "TouristAttraction",
+            name: `Dia ${day.day}: ${day.title}`,
+            description: day.body,
+          })),
+          offers: expedition.priceFrom
+            ? {
+                "@type": "Offer",
+                priceCurrency: expedition.currency,
+                price: expedition.priceFrom,
+                url: pageUrl,
+                availability: "https://schema.org/InStock",
+              }
+            : undefined,
+          provider: {
+            "@type": "TravelAgency",
+            name: "ABC Fly Expeditions",
+            url: "https://www.abcflyexpeditions.com",
+          },
+        }}
+      />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: expedition.faq.map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: item.answer,
+            },
+          })),
+        }}
+      />
       <section
         style={{
           position: "relative",
@@ -300,7 +345,7 @@ export default async function ExpeditionPage({ params }: Props) {
             <QuoteForm
               expedition={expedition}
               departures={departures}
-              pageUrl={`https://www.abcflyexpeditions.com/expedicoes/${expedition.slug}`}
+              pageUrl={pageUrl}
             />
           </aside>
         </div>

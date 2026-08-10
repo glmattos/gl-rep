@@ -694,4 +694,476 @@ export const expeditions: Expedition[] = [
       "cruzeiro-antartica-mv-ushuaia",
     ],
   },
+  {
+    slug: "torres-del-paine-eco-camp",
+    title: "Trekking em Torres del Paine — EcoCamp",
+    tagline: "O Circuito W em cinco dias de Patagônia pura.",
+    summary:
+      "Caminhadas inspiradas no Circuito W com base no EcoCamp Patagonia: Vale Ascencio, Vale do Francês e Mirante Grey.",
+    story:
+      "Torres del Paine é uma das trilhas mais deslumbrantes do planeta. Este roteiro curto concentra os três setores mais impressionantes do parque, com hospedagem sustentável e ritmo exigente — sem técnica de escalada, mas com bom condicionamento.",
+    heroImage: "/images/gallery-mountain.jpg",
+    heroAlt: "Montanhas da Patagônia chilena",
+    gallery: [
+      {
+        src: "/images/hero-alaska.jpg",
+        alt: "Cordilheira e céu aberto",
+      },
+      {
+        src: "/images/hero-nature.jpg",
+        alt: "Paisagem natural remota",
+      },
+    ],
+    destinations: ["América do Sul", "Chile"],
+    activities: ["Trekking", "Natureza & Vida Selvagem"],
+    durationDays: 5,
+    difficulty: 3,
+    bestSeason: "Outubro a abril",
+    groupSize: "Pequeno grupo",
+    priceFrom: 12500,
+    currency: "BRL",
+    highlights: [
+      "Inspirado no Circuito W",
+      "EcoCamp Patagonia",
+      "Vale Ascencio, Francês e Grey",
+      "Base sustentável no parque",
+    ],
+    dayByDay: [
+      {
+        day: 1,
+        title: "Chegada à Patagônia",
+        body: "Recepção e transferência para o EcoCamp. Briefing da trilha e primeira caminhada de ambientação.",
+      },
+      {
+        day: 2,
+        title: "Vale Ascencio",
+        body: "Trekking em direção às Torres, com 5–6 horas de caminhada em terreno variável.",
+      },
+      {
+        day: 3,
+        title: "Vale do Francês",
+        body: "Exploração de um dos setores mais dramáticos do parque, com vistas de glaciares e paredões.",
+      },
+      {
+        day: 4,
+        title: "Mirante Grey",
+        body: "Caminhada até o mirante do Glaciar Grey e retorno à base.",
+      },
+      {
+        day: 5,
+        title: "Despedida",
+        body: "Manhã livre ou trecho curto e transfer de saída.",
+      },
+    ],
+    includes: [
+      "Hospedagem no EcoCamp conforme categoria orçada",
+      "Guias de trekking",
+      "Refeições conforme proposta",
+      "Entradas do parque (quando aplicável à operação)",
+    ],
+    excludes: [
+      "Aéreos até Punta Arenas/Puerto Natales",
+      "Seguro viagem",
+      "Equipamento pessoal de trekking",
+      "Despesas pessoais",
+    ],
+    importantInfo: [
+      "Caminhadas diárias de 5–6 horas — condicionamento prévio é essencial.",
+      "Clima patagônico muda rápido: camadas e capa impermeável são obrigatórias.",
+    ],
+    faq: [
+      {
+        question: "É o Circuito W completo?",
+        answer:
+          "É um roteiro curto inspirado nos setores clássicos do W, ideal para quem tem poucos dias e bom preparo físico.",
+      },
+    ],
+    relatedSlugs: [
+      "chapada-dos-veadeiros-essencial",
+      "cruzeiro-antartica-mv-ushuaia",
+    ],
+  },
+  {
+    slug: "aria-amazon-aqua-expeditions",
+    title: "Aqua Expeditions — Aria Amazon",
+    tagline: "Quatro dias no maior rio do mundo.",
+    summary:
+      "Cruzeiro boutique pela Amazônia peruana a partir de Iquitos: amanheceres no rio, exploracões em ignição e selva em ritmo intimista.",
+    story:
+      "Iquitos é a porta de entrada para o Rio Amazonas. A bordo do Aria, a navegação pelos afluentes revela uma floresta que se escuta antes de se ver — com conforto de expedição e curadoria de natureza.",
+    heroImage: "/images/gallery-ocean.jpg",
+    heroAlt: "Águas e floresta em clima de expedição",
+    gallery: [
+      {
+        src: "/images/hero-nature.jpg",
+        alt: "Floresta densa",
+      },
+      {
+        src: "/images/gallery-waterfall.jpg",
+        alt: "Água em meio à vegetação",
+      },
+    ],
+    destinations: ["América do Sul", "Peru"],
+    activities: ["Navegações", "Natureza & Vida Selvagem"],
+    durationDays: 4,
+    difficulty: 1,
+    bestSeason: "Ano todo (experiência varia com o nível do rio)",
+    groupSize: "Cruzeiro boutique",
+    priceFrom: 23380,
+    currency: "BRL",
+    highlights: [
+      "Embarque em Iquitos",
+      "Navegação pelo Amazonas e afluentes",
+      "Saídas de exploração diárias",
+      "Conforto Aqua Expeditions",
+    ],
+    dayByDay: [
+      {
+        day: 1,
+        title: "Iquitos — Embarque",
+        body: "Recepção em Iquitos, traslado ao navio e início da navegação. Jantar a bordo.",
+      },
+      {
+        day: 2,
+        title: "Amanhecer no Amazonas",
+        body: "Explorações pela manhã e à tarde em ignições, com observação de fauna e comunidades ribeirinhas conforme operação.",
+      },
+      {
+        day: 3,
+        title: "Afluentes e selva",
+        body: "Navegação por braços do rio e caminhadas ou passeios interpretativos na floresta.",
+      },
+      {
+        day: 4,
+        title: "Desembarque",
+        body: "Últimas atividades e retorno a Iquitos.",
+      },
+    ],
+    includes: [
+      "Cruzeiro Aria conforme categoria",
+      "Refeições a bordo",
+      "Explorações com guia",
+      "Transfers locais do roteiro",
+    ],
+    excludes: [
+      "Aéreos até Iquitos",
+      "Seguro viagem",
+      "Bebidas especiais e extras",
+      "Gorjetas",
+    ],
+    importantInfo: [
+      "Roteiro adaptável conforme nível do rio e condições da selva.",
+      "Repelente, roupas leves de manga longa e calçado fechado são recomendados.",
+    ],
+    faq: [
+      {
+        question: "Serve para quem viaja a dois?",
+        answer:
+          "Sim. É uma das melhores opções para casais que querem Amazônia com conforto e pouco deslocamento terrestre.",
+      },
+    ],
+    relatedSlugs: [
+      "silversea-alasca-vancouver-seward",
+      "costa-rica-natureza-selvagem",
+    ],
+  },
+  {
+    slug: "finlandia-aurora-rovaniemi",
+    title: "Finlândia — Aurora Boreal em Rovaniemi",
+    tagline: "Lapônia, neve e o céu em movimento.",
+    summary:
+      "Rovaniemi na Lapônia finlandesa: natureza branca, iglus de vidro e a busca pela aurora boreal.",
+    story:
+      "A Finlândia no inverno é um convite à quietude. Entre paisagens cobertas de neve e a possibilidade de dormir sob o céu polar, Rovaniemi oferece uma aventura sofisticada — mais contemplativa, igualmente inesquecível.",
+    heroImage: "/images/hero-antarctica.jpg",
+    heroAlt: "Céu polar e paisagem nevada",
+    gallery: [
+      {
+        src: "/images/gallery-ice.jpg",
+        alt: "Paisagem gelada",
+      },
+      {
+        src: "/images/hero-alaska.jpg",
+        alt: "Montanhas sob luz fria",
+      },
+    ],
+    destinations: ["Europa", "Finlândia"],
+    activities: ["Natureza & Vida Selvagem"],
+    durationDays: 6,
+    difficulty: 1,
+    bestSeason: "Setembro a março",
+    groupSize: "Privativo ou pequeno grupo",
+    priceFrom: 18900,
+    currency: "BRL",
+    highlights: [
+      "Rovaniemi e Lapônia",
+      "Busca pela aurora boreal",
+      "Hospedagem em iglu de vidro (conforme orçamento)",
+      "Atividades nórdicas sob consulta",
+    ],
+    dayByDay: [
+      {
+        day: 1,
+        title: "Chegada a Rovaniemi",
+        body: "Recepção e transferência à hospedagem. Primeira noite sob o céu da Lapônia.",
+      },
+      {
+        day: 2,
+        title: "Floresta boreal",
+        body: "Caminhada ou atividade leve na neve e preparação para caça à aurora.",
+      },
+      {
+        day: 3,
+        title: "Experiências árticas",
+        body: "Atividades opcionais como trenó, snowshoes ou spa — conforme proposta.",
+      },
+      {
+        day: 4,
+        title: "Iglu de vidro",
+        body: "Noite especial para maximizar a chance de ver a aurora (sujeito a clima).",
+      },
+      {
+        day: 5,
+        title: "Lapônia profunda",
+        body: "Dia livre ou tour cultural na região.",
+      },
+      {
+        day: 6,
+        title: "Partida",
+        body: "Transfer ao aeroporto e encerramento.",
+      },
+    ],
+    includes: [
+      "Hospedagens conforme categoria orçada",
+      "Transfers descritos na proposta",
+      "Seleção de atividades principais",
+    ],
+    excludes: [
+      "Aéreos internacionais",
+      "Seguro viagem",
+      "Atividades opcionais",
+      "Refeições não descritas",
+    ],
+    importantInfo: [
+      "Aurora boreal é fenômeno natural — nunca garantida, sempre perseguida com inteligência climática.",
+      "Temperatura pode ser extrema: kit térmico adequado é obrigatório.",
+    ],
+    faq: [
+      {
+        question: "Qual a melhor época para aurora?",
+        answer:
+          "Noites longas entre setembro e março oferecem as melhores condições, com pico no inverno.",
+      },
+    ],
+    relatedSlugs: [
+      "silversea-alasca-vancouver-seward",
+      "escocia-bike-lago-ness",
+    ],
+  },
+  {
+    slug: "costa-rica-natureza-selvagem",
+    title: "Costa Rica — Natureza, Vulcão e Praias",
+    tagline: "Selva, calor e o pura vida em estado bruto.",
+    summary:
+      "De San José às florestas e praias: um roteiro adaptável pela biodiversidade costarriquenha.",
+    story:
+      "A Costa Rica concentra vulcões, florestas úmidas e costa em um país compacto. Ideal para quem quer natureza intensa com boa infraestrutura e espírito leve — o famosa pura vida.",
+    heroImage: "/images/gallery-waterfall.jpg",
+    heroAlt: "Cachoeira em floresta tropical",
+    gallery: [
+      {
+        src: "/images/hero-nature.jpg",
+        alt: "Floresta tropical",
+      },
+      {
+        src: "/images/gallery-ocean.jpg",
+        alt: "Costa e águas quentes",
+      },
+    ],
+    destinations: ["América Central", "Costa Rica"],
+    activities: ["Natureza & Vida Selvagem", "Trekking"],
+    durationDays: 8,
+    difficulty: 2,
+    bestSeason: "Dezembro a abril",
+    groupSize: "Privativo ou pequeno grupo",
+    priceFrom: 12900,
+    currency: "BRL",
+    highlights: [
+      "San José como porta de entrada",
+      "Florestas e biodiversidade",
+      "Vulcão e mirantes",
+      "Praias para desacelerar",
+    ],
+    dayByDay: [
+      {
+        day: 1,
+        title: "Chegada a San José",
+        body: "Recepção no aeroporto e traslado ao hotel. Vale Central como base estratégica.",
+      },
+      {
+        day: 2,
+        title: "Vulcão e mirantes",
+        body: "Exploração de área vulcânica e primeiras trilhas leves.",
+      },
+      {
+        day: 3,
+        title: "Floresta úmida",
+        body: "Caminhadas interpretativas e observação de fauna.",
+      },
+      {
+        day: 4,
+        title: "Travessia para a costa",
+        body: "Deslocamento cênico em direção às praias.",
+      },
+      {
+        day: 5,
+        title: "Praia e mar",
+        body: "Dia livre para descanso, snorkel ou caminhada litorânea.",
+      },
+      {
+        day: 6,
+        title: "Aventura leve",
+        body: "Atividade opcional (rafting, canopy etc.) conforme perfil do grupo.",
+      },
+      {
+        day: 7,
+        title: "Último dia na natureza",
+        body: "Ritmo livre com possibilidade de passeio local.",
+      },
+      {
+        day: 8,
+        title: "Retorno",
+        body: "Transfer ao aeroporto e fim dos serviços.",
+      },
+    ],
+    includes: [
+      "Hospedagens com café da manhã (conforme proposta)",
+      "Transfers terrestres do roteiro",
+      "Passeios principais descritos",
+    ],
+    excludes: [
+      "Aéreos internacionais",
+      "Seguro viagem",
+      "Almoços e jantares não descritos",
+      "Atividades opcionais",
+    ],
+    importantInfo: [
+      "Roteiro adaptável conforme clima e conexões.",
+      "Leve roupas leve + capa de chuva — o trópico muda rápido.",
+    ],
+    faq: [
+      {
+        question: "É bom para primeira viagem de aventura?",
+        answer:
+          "Sim. A Costa Rica combina natureza forte com logística amigável — ótima porta de entrada.",
+      },
+    ],
+    relatedSlugs: [
+      "aria-amazon-aqua-expeditions",
+      "chapada-dos-veadeiros-essencial",
+    ],
+  },
+  {
+    slug: "indonesia-bali-gili-lombok",
+    title: "Indonésia — Bali, Gili e Lombok",
+    tagline: "Cultura balinesa e o azul das ilhas.",
+    summary:
+      "Oito dias entre tradições de Bali, rafting, vilarejos e dias de praia em Gili/Lombok.",
+    story:
+      "Bali não é só praia — é ritual, arrozal e vulcão. Somada a Gili e Lombok, a travessia equilibra cultura, água e tempo lento no arquipélago indonésio.",
+    heroImage: "/images/gallery-ocean.jpg",
+    heroAlt: "Mar turquesa e costa tropical",
+    gallery: [
+      {
+        src: "/images/hero-home.jpg",
+        alt: "Ondas e costa",
+      },
+      {
+        src: "/images/hero-nature.jpg",
+        alt: "Verde tropical",
+      },
+    ],
+    destinations: ["Ásia", "Indonésia"],
+    activities: ["Natureza & Vida Selvagem"],
+    durationDays: 8,
+    difficulty: 2,
+    bestSeason: "Abril a outubro",
+    groupSize: "Privativo ou pequeno grupo",
+    priceFrom: 14200,
+    currency: "BRL",
+    highlights: [
+      "Cultura e templos em Bali",
+      "Rafting e natureza interiorana",
+      "Ilhas Gili / Lombok",
+      "Equilíbrio entre imersão e praia",
+    ],
+    dayByDay: [
+      {
+        day: 1,
+        title: "Chegada a Bali",
+        body: "Recepção e transferência à região escolhida (Ubud ou sul, conforme proposta).",
+      },
+      {
+        day: 2,
+        title: "Cultura balinesa",
+        body: "Templos, artesanato e possível espetáculo tradicional.",
+      },
+      {
+        day: 3,
+        title: "Natureza interior",
+        body: "Rafting ou caminhada entre arrozais e florestas.",
+      },
+      {
+        day: 4,
+        title: "Travessia às ilhas",
+        body: "Deslocamento para Gili ou Lombok.",
+      },
+      {
+        day: 5,
+        title: "Mar e descanso",
+        body: "Praia, snorkel e ritmo lento.",
+      },
+      {
+        day: 6,
+        title: "Exploração costeira",
+        body: "Passeio de barco ou bike pela ilha.",
+      },
+      {
+        day: 7,
+        title: "Último pôr do sol",
+        body: "Dia livre para ritual final de água e silêncio.",
+      },
+      {
+        day: 8,
+        title: "Partida",
+        body: "Retorno ao aeroporto e encerramento.",
+      },
+    ],
+    includes: [
+      "Hospedagens conforme categoria",
+      "Transfers e travessias descritas",
+      "Seleção de passeios principais",
+    ],
+    excludes: [
+      "Aéreos internacionais",
+      "Seguro viagem",
+      "Visto/VOA quando aplicável",
+      "Refeições não descritas",
+    ],
+    importantInfo: [
+      "Respeito cultural em templos (vestimenta adequada).",
+      "Roteiro adaptável a feriados locais e clima de monção.",
+    ],
+    faq: [
+      {
+        question: "Dá para incluir surf?",
+        answer:
+          "Sim. Avise no orçamento o nível e a região preferida — montamos a variante.",
+      },
+    ],
+    relatedSlugs: [
+      "costa-rica-natureza-selvagem",
+      "nepal-everest-base-camp",
+    ],
+  },
 ];

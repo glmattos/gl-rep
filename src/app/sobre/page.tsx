@@ -9,14 +9,57 @@ export const metadata: Metadata = {
 
 export default function SobrePage() {
   return (
-    <div style={{ paddingTop: "calc(var(--header-h) + 2rem)" }}>
-      <section className="section" style={{ paddingTop: "2rem" }}>
-        <div className="container" style={{ maxWidth: "46rem" }}>
-          <span className="eyebrow">Quem somos</span>
-          <h1 className="display" style={{ fontSize: "clamp(2.6rem, 6vw, 4.5rem)" }}>
+    <>
+      <section
+        style={{
+          position: "relative",
+          minHeight: "70svh",
+          display: "grid",
+          alignItems: "end",
+          color: "var(--snow)",
+        }}
+      >
+        <div style={{ position: "absolute", inset: 0 }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            className="hero-media"
+            src="/images/hero-trek.jpg"
+            alt="Viajantes em expedição na natureza"
+            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          />
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              background:
+                "linear-gradient(180deg, rgba(6,20,29,0.25), rgba(6,20,29,0.88))",
+            }}
+          />
+        </div>
+        <div
+          className="container"
+          style={{
+            position: "relative",
+            zIndex: 1,
+            paddingBottom: "3rem",
+            paddingTop: "calc(var(--header-h) + 2rem)",
+          }}
+        >
+          <p className="eyebrow" style={{ color: "var(--lime)" }}>
+            Quem somos
+          </p>
+          <h1
+            className="display"
+            style={{ fontSize: "clamp(2.8rem, 7vw, 5rem)", maxWidth: "14ch" }}
+          >
             Uma comunidade de exploradores
           </h1>
-          <p style={{ lineHeight: 1.8, fontSize: "1.1rem" }}>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container" style={{ maxWidth: "46rem" }}>
+          <p style={{ lineHeight: 1.8, fontSize: "1.12rem" }}>
             A ABC FLY EXPEDITIONS é o braço de aventura da ABC FLY Viagens e
             Turismo, agência com mais de 21 anos de experiência no mercado de
             viagens de luxo. Criamos esta unidade para quem busca natureza,
@@ -24,17 +67,30 @@ export default function SobrePage() {
             e credibilidade.
           </p>
           <p style={{ lineHeight: 1.8, color: "var(--stone)" }}>
-            Nosso lema é simples e poderoso: Explore Everything. Queremos
-            inspirar você a explorar não apenas lugares, mas também culturas,
-            conexões e novas formas de ver o mundo.
+            Com base em Santo André – SP, levamos você a destinos no Brasil e no
+            mundo: surf trips, trekking, navegações, ecoturismo e experiências
+            culturais. Trabalhamos com os melhores fornecedores e operadoras,
+            nacionais e internacionais.
           </p>
-          <div style={{ marginTop: "1.5rem" }}>
+          <p
+            style={{
+              fontFamily: "var(--font-display), serif",
+              fontSize: "2rem",
+              marginTop: "2rem",
+            }}
+          >
+            Explore Everything.
+          </p>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.8rem", marginTop: "1.5rem" }}>
+            <Link href="/como-viajamos" className="btn btn-dark">
+              Como viajamos
+            </Link>
             <Link href="/solicitar-orcamento" className="btn btn-primary">
               Planejar minha expedição
             </Link>
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 }

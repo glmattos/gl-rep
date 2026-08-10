@@ -35,8 +35,10 @@ As páginas de expedição e o formulário de orçamento refletem automaticament
 | `/expedicoes` | Hub de descoberta |
 | `/expedicoes/[slug]` | Página rica da expedição + form |
 | `/solicitar-orcamento` | Orçamento global |
-| `/destinos` / `/atividades` | Taxonomia |
-| `/diario` | Blog integrado (esqueleto) |
+| `/destinos` / `/destinos/[slug]` | Hubs editoriais de destino |
+| `/atividades` / `/atividades/[slug]` | Hubs editoriais de atividade |
+| `/diario` / `/diario/[slug]` | Blog com expedições relacionadas |
+| `/como-viajamos` / `/depoimentos` / `/sobre` | Marca e confiança |
 | `/loja` | Módulo futuro isolado |
 
 ## Documentos

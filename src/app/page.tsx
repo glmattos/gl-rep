@@ -1,9 +1,18 @@
 import Link from "next/link";
 import { ExpeditionCard } from "@/components/ui/ExpeditionCard";
-import { getFeaturedExpeditions } from "@/lib/content";
+import {
+  getAllDestinationHubs,
+  getAllPosts,
+  getFeaturedExpeditions,
+  getTestimonials,
+} from "@/lib/content";
+import { formatDate } from "@/lib/format";
 
 export default function HomePage() {
   const featured = getFeaturedExpeditions(3);
+  const destinations = getAllDestinationHubs().slice(0, 6);
+  const testimonials = getTestimonials().slice(0, 2);
+  const posts = getAllPosts().slice(0, 3);
 
   return (
     <>
@@ -17,10 +26,7 @@ export default function HomePage() {
           overflow: "hidden",
         }}
       >
-        <div
-          aria-hidden
-          style={{ position: "absolute", inset: 0, zIndex: 0 }}
-        >
+        <div aria-hidden style={{ position: "absolute", inset: 0, zIndex: 0 }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             className="hero-media"
@@ -110,6 +116,39 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="container">
+          <div className="section-head">
+            <span className="eyebrow">Escolha um horizonte</span>
+            <h2 className="display">Destinos</h2>
+            <p>Do gelo polar ao trópico — comece pelo mapa que mais te chama.</p>
+          </div>
+          <div className="card-grid">
+            {destinations.map((hub) => (
+              <Link
+                key={hub.slug}
+                href={`/destinos/${hub.slug}`}
+                className="link-focus"
+                style={{ display: "grid", gap: "0.7rem" }}
+              >
+                <div className="media-frame" style={{ aspectRatio: "4 / 3" }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={hub.heroImage} alt={hub.name} />
+                </div>
+                <div>
+                  <h3 className="display" style={{ margin: 0, fontSize: "1.7rem" }}>
+                    {hub.name}
+                  </h3>
+                  <p style={{ margin: "0.35rem 0 0", color: "var(--stone)" }}>
+                    {hub.tagline}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section
         className="section"
         style={{
@@ -131,9 +170,73 @@ export default function HomePage() {
             com liberdade — e volte com histórias.
           </p>
           <div>
-            <Link href="/sobre" className="btn btn-secondary">
-              Conhecer a ABC Fly
+            <Link href="/como-viajamos" className="btn btn-secondary">
+              Nosso método
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <div className="section-head">
+            <span className="eyebrow">Viajantes</span>
+            <h2 className="display">Histórias de quem foi</h2>
+          </div>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+              gap: "1.25rem",
+            }}
+            className="testimonial-grid"
+          >
+            {testimonials.map((item) => (
+              <blockquote key={item.id} className="panel" style={{ margin: 0, padding: "1.4rem" }}>
+                <p className="display" style={{ fontSize: "1.45rem", lineHeight: 1.35 }}>
+                  “{item.quote}”
+                </p>
+                <footer style={{ color: "var(--stone)" }}>
+                  <strong style={{ color: "var(--ink)" }}>{item.name}</strong> · {item.trip}
+                </footer>
+              </blockquote>
+            ))}
+          </div>
+          <div style={{ marginTop: "1.5rem" }}>
+            <Link href="/depoimentos" className="btn btn-dark">
+              Ver depoimentos
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="container">
+          <div className="section-head">
+            <span className="eyebrow">Diário</span>
+            <h2 className="display">Inspiração para a próxima saída</h2>
+          </div>
+          <div className="card-grid">
+            {posts.map((post) => (
+              <Link
+                key={post.slug}
+                href={`/diario/${post.slug}`}
+                className="link-focus"
+                style={{ display: "grid", gap: "0.7rem" }}
+              >
+                <div className="media-frame" style={{ aspectRatio: "16 / 10" }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={post.heroImage} alt={post.title} />
+                </div>
+                <div>
+                  <span className="eyebrow">{formatDate(post.publishedAt)}</span>
+                  <h3 className="display" style={{ margin: "0.35rem 0", fontSize: "1.6rem" }}>
+                    {post.title}
+                  </h3>
+                  <p style={{ margin: 0, color: "var(--stone)" }}>{post.excerpt}</p>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

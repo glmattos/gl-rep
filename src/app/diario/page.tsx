@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { getAllPosts } from "@/lib/content";
+import { formatDate } from "@/lib/format";
 
 export const metadata: Metadata = {
   title: "Diário",
@@ -7,28 +9,9 @@ export const metadata: Metadata = {
     "Inspiração, planejamento e autoridade — o diário de viagens da ABC Fly Expeditions.",
 };
 
-const posts = [
-  {
-    title: "Peru em 10 dias: deserto, montanhas e aventura",
-    excerpt:
-      "Uma travessia entre Lima, Huacachina e Cusco com ritmo humano e descoberta.",
-    related: "/expedicoes?destino=Am%C3%A9rica%20do%20Sul",
-  },
-  {
-    title: "Roteiros de bike na Escócia",
-    excerpt:
-      "Highlands, lochs e a liberdade de explorar o país sobre duas rodas.",
-    related: "/expedicoes/escocia-bike-lago-ness",
-  },
-  {
-    title: "Como planejar uma aventura de luxo",
-    excerpt:
-      "Conforto e selvageria podem coexistir — com curadoria e segurança.",
-    related: "/expedicoes",
-  },
-];
-
 export default function DiarioPage() {
+  const posts = getAllPosts();
+
   return (
     <div style={{ paddingTop: "calc(var(--header-h) + 2rem)" }}>
       <section className="section" style={{ paddingTop: "2rem" }}>
@@ -43,13 +26,28 @@ export default function DiarioPage() {
           </div>
           <div className="card-grid">
             {posts.map((post) => (
-              <article key={post.title} className="panel" style={{ padding: "1.4rem" }}>
-                <h2 className="display" style={{ fontSize: "1.8rem", marginTop: 0 }}>
-                  {post.title}
-                </h2>
-                <p style={{ color: "var(--stone)", lineHeight: 1.65 }}>{post.excerpt}</p>
-                <Link href={post.related} className="btn btn-dark">
-                  Ver expedições relacionadas
+              <article key={post.slug}>
+                <Link
+                  href={`/diario/${post.slug}`}
+                  className="link-focus"
+                  style={{ display: "grid", gap: "0.85rem" }}
+                >
+                  <div className="media-frame" style={{ aspectRatio: "16 / 10" }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={post.heroImage} alt={post.title} />
+                  </div>
+                  <div>
+                    <span className="eyebrow">{formatDate(post.publishedAt)}</span>
+                    <h2
+                      className="display"
+                      style={{ margin: "0.4rem 0", fontSize: "1.8rem" }}
+                    >
+                      {post.title}
+                    </h2>
+                    <p style={{ margin: 0, color: "var(--stone)", lineHeight: 1.65 }}>
+                      {post.excerpt}
+                    </p>
+                  </div>
                 </Link>
               </article>
             ))}

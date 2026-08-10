@@ -1,6 +1,17 @@
+import { activities } from "../../content/activities";
 import departuresData from "../../content/departures.json";
+import { destinations } from "../../content/destinations";
 import { expeditions } from "../../content/expeditions";
-import type { Departure, Expedition } from "@/lib/types";
+import { posts } from "../../content/posts";
+import { testimonials } from "../../content/testimonials";
+import type {
+  ActivityHub,
+  Departure,
+  DestinationHub,
+  DiaryPost,
+  Expedition,
+  Testimonial,
+} from "@/lib/types";
 
 const departures = departuresData as Departure[];
 
@@ -54,14 +65,64 @@ export function filterExpeditions(params: {
 }
 
 export function getTaxonomy() {
-  const destinations = new Set<string>();
-  const activities = new Set<string>();
+  const destinationNames = new Set<string>();
+  const activityNames = new Set<string>();
   for (const expedition of expeditions) {
-    expedition.destinations.forEach((item) => destinations.add(item));
-    expedition.activities.forEach((item) => activities.add(item));
+    expedition.destinations.forEach((item) => destinationNames.add(item));
+    expedition.activities.forEach((item) => activityNames.add(item));
   }
   return {
-    destinations: [...destinations].sort(),
-    activities: [...activities].sort(),
+    destinations: [...destinationNames].sort(),
+    activities: [...activityNames].sort(),
   };
+}
+
+export function getAllDestinationHubs(): DestinationHub[] {
+  return destinations;
+}
+
+export function getDestinationHub(slug: string): DestinationHub | undefined {
+  return destinations.find((item) => item.slug === slug);
+}
+
+export function getExpeditionsForDestination(hub: DestinationHub): Expedition[] {
+  const labels = new Set(hub.matchLabels.map((item) => item.toLowerCase()));
+  return expeditions.filter((expedition) =>
+    expedition.destinations.some((destination) =>
+      labels.has(destination.toLowerCase()),
+    ),
+  );
+}
+
+export function getAllActivityHubs(): ActivityHub[] {
+  return activities;
+}
+
+export function getActivityHub(slug: string): ActivityHub | undefined {
+  return activities.find((item) => item.slug === slug);
+}
+
+export function getExpeditionsForActivity(hub: ActivityHub): Expedition[] {
+  const labels = new Set(hub.matchLabels.map((item) => item.toLowerCase()));
+  return expeditions.filter((expedition) =>
+    expedition.activities.some((activity) => labels.has(activity.toLowerCase())),
+  );
+}
+
+export function getAllPosts(): DiaryPost[] {
+  return [...posts].sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
+}
+
+export function getPostBySlug(slug: string): DiaryPost | undefined {
+  return posts.find((item) => item.slug === slug);
+}
+
+export function getRelatedExpeditionsForPost(post: DiaryPost): Expedition[] {
+  return post.relatedExpeditionSlugs
+    .map((slug) => getExpeditionBySlug(slug))
+    .filter((item): item is Expedition => Boolean(item));
+}
+
+export function getTestimonials(): Testimonial[] {
+  return testimonials;
 }

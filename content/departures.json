@@ -98,5 +98,78 @@
     "status": "available",
     "notes": "Rota Lemosho — aclimatização reforçada",
     "seatsLeft": 7
+  },
+  {
+    "id": "paine-2026-11",
+    "expeditionSlug": "torres-del-paine-eco-camp",
+    "startDate": "2026-11-08",
+    "endDate": "2026-11-12",
+    "status": "available",
+    "seatsLeft": 6
+  },
+  {
+    "id": "paine-2027-01",
+    "expeditionSlug": "torres-del-paine-eco-camp",
+    "startDate": "2027-01-18",
+    "endDate": "2027-01-22",
+    "status": "available",
+    "seatsLeft": 8
+  },
+  {
+    "id": "amazon-2026-09",
+    "expeditionSlug": "aria-amazon-aqua-expeditions",
+    "startDate": "2026-09-04",
+    "endDate": "2026-09-07",
+    "status": "limited",
+    "seatsLeft": 3
+  },
+  {
+    "id": "amazon-2026-10",
+    "expeditionSlug": "aria-amazon-aqua-expeditions",
+    "startDate": "2026-10-09",
+    "endDate": "2026-10-12",
+    "status": "available",
+    "seatsLeft": 7
+  },
+  {
+    "id": "finland-2026-12",
+    "expeditionSlug": "finlandia-aurora-rovaniemi",
+    "startDate": "2026-12-12",
+    "endDate": "2026-12-17",
+    "status": "available",
+    "notes": "Alta temporada de aurora",
+    "seatsLeft": 5
+  },
+  {
+    "id": "finland-2027-02",
+    "expeditionSlug": "finlandia-aurora-rovaniemi",
+    "startDate": "2027-02-15",
+    "endDate": "2027-02-20",
+    "status": "available",
+    "seatsLeft": 6
+  },
+  {
+    "id": "costarica-2026-08",
+    "expeditionSlug": "costa-rica-natureza-selvagem",
+    "startDate": "2026-08-08",
+    "endDate": "2026-08-15",
+    "status": "available",
+    "seatsLeft": 8
+  },
+  {
+    "id": "indonesia-2026-09",
+    "expeditionSlug": "indonesia-bali-gili-lombok",
+    "startDate": "2026-09-05",
+    "endDate": "2026-09-12",
+    "status": "available",
+    "seatsLeft": 6
+  },
+  {
+    "id": "indonesia-2026-10",
+    "expeditionSlug": "indonesia-bali-gili-lombok",
+    "startDate": "2026-10-10",
+    "endDate": "2026-10-17",
+    "status": "limited",
+    "seatsLeft": 2
   }
 ]

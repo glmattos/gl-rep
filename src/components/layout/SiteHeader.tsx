@@ -16,7 +16,12 @@ const nav = [
 export function SiteHeader() {
   const pathname = usePathname();
   const isImmersive =
-    pathname === "/" || pathname.startsWith("/expedicoes/");
+    pathname === "/" ||
+    pathname.startsWith("/expedicoes/") ||
+    (pathname.startsWith("/destinos/") && pathname !== "/destinos") ||
+    (pathname.startsWith("/atividades/") && pathname !== "/atividades") ||
+    (pathname.startsWith("/diario/") && pathname !== "/diario") ||
+    pathname === "/sobre";
   const [solid, setSolid] = useState(!isImmersive);
   const [open, setOpen] = useState(false);
 

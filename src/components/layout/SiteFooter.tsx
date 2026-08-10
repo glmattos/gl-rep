@@ -11,14 +11,7 @@ export function SiteFooter() {
       }}
     >
       <div className="container" style={{ display: "grid", gap: "2.5rem" }}>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1.4fr 1fr 1fr",
-            gap: "2rem",
-          }}
-          className="footer-grid"
-        >
+        <div className="footer-grid">
           <div>
             <div style={{ marginBottom: "1rem" }}>
               <div style={{ fontWeight: 800, letterSpacing: "0.14em" }}>ABC FLY</div>
@@ -66,6 +59,8 @@ export function SiteFooter() {
             </div>
             <div style={{ display: "grid", gap: "0.55rem" }}>
               <Link href="/sobre">Sobre</Link>
+              <Link href="/como-viajamos">Como viajamos</Link>
+              <Link href="/depoimentos">Depoimentos</Link>
               <Link href="/contato">Contato</Link>
               <Link href="/solicitar-orcamento">Solicitar orçamento</Link>
               <Link href="/loja" style={{ opacity: 0.7 }}>
@@ -88,10 +83,13 @@ export function SiteFooter() {
           }}
         >
           <span>© {new Date().getFullYear()} ABC Fly Expeditions</span>
-          <span>Braço de aventura da ABC FLY Viagens e Turismo · Cadastur</span>
+          <span style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+            <Link href="/legal/privacidade">Privacidade</Link>
+            <Link href="/legal/termos">Termos</Link>
+            <span>Cadastur · ABC FLY Viagens e Turismo</span>
+          </span>
         </div>
       </div>
-
-      </footer>
+    </footer>
   );
 }

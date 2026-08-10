@@ -71,3 +71,40 @@ export interface QuoteRequestPayload {
   pageUrl: string;
   consent: boolean;
 }
+
+export interface DestinationHub {
+  slug: string;
+  name: string;
+  tagline: string;
+  summary: string;
+  heroImage: string;
+  matchLabels: string[];
+}
+
+export interface ActivityHub {
+  slug: string;
+  name: string;
+  tagline: string;
+  summary: string;
+  heroImage: string;
+  matchLabels: string[];
+}
+
+export interface DiaryPost {
+  slug: string;
+  title: string;
+  excerpt: string;
+  body: string[];
+  heroImage: string;
+  publishedAt: string;
+  relatedExpeditionSlugs: string[];
+  tags: string[];
+}
+
+export interface Testimonial {
+  id: string;
+  name: string;
+  trip: string;
+  quote: string;
+  location?: string;
+}

@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getTaxonomy } from "@/lib/content";
+import { getAllActivityHubs, getExpeditionsForActivity } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Atividades",
-  description: "Trekking, bike, navegações e mais — filtre expedições por atividade.",
+  description:
+    "Trekking, bike, navegações e natureza — filtre expedições ABC Fly por atividade.",
 };
 
 export default function AtividadesPage() {
-  const { activities } = getTaxonomy();
+  const hubs = getAllActivityHubs();
 
   return (
     <div style={{ paddingTop: "calc(var(--header-h) + 2rem)" }}>
@@ -17,22 +18,42 @@ export default function AtividadesPage() {
           <div className="section-head">
             <span className="eyebrow">Como você quer explorar</span>
             <h1 className="display">Atividades</h1>
-            <p>Uma linguagem clara de descoberta — sem categorias de loja.</p>
+            <p>
+              Uma linguagem clara de descoberta. Sem categorias de loja — só o
+              jeito como você quer sentir o mundo.
+            </p>
           </div>
           <div className="card-grid">
-            {activities.map((activity) => (
-              <Link
-                key={activity}
-                href={`/expedicoes?atividade=${encodeURIComponent(activity)}`}
-                className="panel link-focus"
-                style={{ padding: "1.5rem", display: "grid", gap: "0.5rem" }}
-              >
-                <span className="eyebrow">Atividade</span>
-                <strong className="display" style={{ fontSize: "2rem" }}>
-                  {activity}
-                </strong>
-              </Link>
-            ))}
+            {hubs.map((hub) => {
+              const count = getExpeditionsForActivity(hub).length;
+              return (
+                <Link
+                  key={hub.slug}
+                  href={`/atividades/${hub.slug}`}
+                  className="link-focus"
+                  style={{ display: "grid", gap: "0.85rem" }}
+                >
+                  <div className="media-frame" style={{ aspectRatio: "4 / 3" }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={hub.heroImage} alt={hub.name} />
+                  </div>
+                  <div>
+                    <span className="eyebrow">
+                      {count} {count === 1 ? "expedição" : "expedições"}
+                    </span>
+                    <h2
+                      className="display"
+                      style={{ margin: "0.35rem 0", fontSize: "2rem" }}
+                    >
+                      {hub.name}
+                    </h2>
+                    <p style={{ margin: 0, color: "var(--stone)", lineHeight: 1.6 }}>
+                      {hub.tagline}
+                    </p>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
