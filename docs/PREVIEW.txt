@@ -1,8 +1,8 @@
-Preview ao vivo:
-https://abcfly-expeditions.loca.lt
+Preview ao vivo (Cloudflare — use este):
+https://owned-green-unnecessary-redhead.trycloudflare.com
 
-Alternativa Cloudflare (pode exigir DNS externo):
-https://readers-portion-wherever-determine.trycloudflare.com
+Backup (localtunnel):
+https://polite-zebras-hunt.loca.lt
 
 Branch: cursor/abc-fly-platform-audit-ba5a
 Servidor local: http://127.0.0.1:3000
