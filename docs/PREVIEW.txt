@@ -1,6 +1,8 @@
-Preview ao vivo:
-https://uri-travelers-felt-using.trycloudflare.com
+Preview ao vivo (use este):
+https://century-lying-pregnancy-hidden.trycloudflare.com
+
+Backup:
+https://polite-zebras-hunt.loca.lt
 
 Branch: cursor/abc-fly-platform-audit-ba5a
-Produtos: 30/30 do site original Wix
 Servidor local: http://127.0.0.1:3000
