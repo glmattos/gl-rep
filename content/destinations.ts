@@ -140,4 +140,40 @@ export const destinations: DestinationHub[] = [
     heroImage: "/images/hero-coast.jpg",
     matchLabels: ["Europa", "Escócia", "Finlândia", "Islândia", "Portugal"],
   },
+  {
+    slug: "oceania",
+    name: "Oceânia",
+    tagline: "Austrália, Nova Zelândia e horizontes do Pacífico.",
+    summary:
+      "Roteiros clássicos e essenciais na Oceânia — natureza em grande escala com a curadoria ABC Fly.",
+    heroImage: "/images/wix/australia-classica-10-dias-5.webp",
+    matchLabels: ["Oceânia", "Austrália", "Nova Zelândia"],
+  },
+  {
+    slug: "namibia",
+    name: "Namíbia",
+    tagline: "Desertos, dunas e silêncio absoluto.",
+    summary:
+      "As belezas da Namíbia em expedição com paisagens únicas e operação local.",
+    heroImage: "/images/wix/belezas-da-namibia-3.jpg",
+    matchLabels: ["Namíbia", "África"],
+  },
+  {
+    slug: "africa-do-sul",
+    name: "África do Sul",
+    tagline: "Cape Town e safáris em reservas privadas.",
+    summary:
+      "Cape Town combinada com reservas como Karongwe e Sabi Sabi — wildlife e costa atlântica.",
+    heroImage: "/images/wix/africa-do-sul-cape-town-e-safari-sabi-sabi-private-reserve-6.jpg",
+    matchLabels: ["África do Sul", "África"],
+  },
+  {
+    slug: "mexico",
+    name: "México",
+    tagline: "Cultura, história e a energia da capital.",
+    summary:
+      "Os encantos da Cidade do México — cultura viva com a leitura ABC Fly de exploração urbana.",
+    heroImage: "/images/wix/os-encantos-da-cidade-do-mexico-4.jpg",
+    matchLabels: ["México", "América do Norte"],
+  },
 ];

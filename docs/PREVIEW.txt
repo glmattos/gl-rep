@@ -1,8 +1,6 @@
-Preview ao vivo (Cloudflare — use este):
-https://owned-green-unnecessary-redhead.trycloudflare.com
-
-Backup (localtunnel):
-https://polite-zebras-hunt.loca.lt
+Preview ao vivo:
+https://uri-travelers-felt-using.trycloudflare.com
 
 Branch: cursor/abc-fly-platform-audit-ba5a
+Produtos: 30/30 do site original Wix
 Servidor local: http://127.0.0.1:3000

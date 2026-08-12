@@ -171,5 +171,157 @@
     "endDate": "2026-10-17",
     "status": "limited",
     "seatsLeft": 2
+  },
+  {
+    "id": "africa-do-sul-cape-town-e-safari-karongwe-private-reserve-custom",
+    "expeditionSlug": "africa-do-sul-cape-town-e-safari-karongwe-private-reserve",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-15",
+    "status": "custom",
+    "notes": "Datas sob consulta — solicite orçamento"
+  },
+  {
+    "id": "africa-do-sul-cape-town-e-safari-sabi-sabi-private-reserve-custom",
+    "expeditionSlug": "africa-do-sul-cape-town-e-safari-sabi-sabi-private-reserve",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-15",
+    "status": "custom",
+    "notes": "Datas sob consulta — solicite orçamento"
+  },
+  {
+    "id": "antarctica-21-travessia-aerea-e-ilha-do-rei-george-8-dias-custom",
+    "expeditionSlug": "antarctica-21-travessia-aerea-e-ilha-do-rei-george-8-dias",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-15",
+    "status": "custom",
+    "notes": "Datas sob consulta — solicite orçamento"
+  },
+  {
+    "id": "australia-classica-10-dias-custom",
+    "expeditionSlug": "australia-classica-10-dias",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-15",
+    "status": "custom",
+    "notes": "Datas sob consulta — solicite orçamento"
+  },
+  {
+    "id": "belezas-da-namibia-custom",
+    "expeditionSlug": "belezas-da-namibia",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-15",
+    "status": "custom",
+    "notes": "Datas sob consulta — solicite orçamento"
+  },
+  {
+    "id": "caminhos-sagrados-jornada-pelo-nepal-e-butao-12-dias-custom",
+    "expeditionSlug": "caminhos-sagrados-jornada-pelo-nepal-e-butao-12-dias",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-15",
+    "status": "custom",
+    "notes": "Datas sob consulta — solicite orçamento"
+  },
+  {
+    "id": "cicloturismo-na-patagonia-rota-dos-sete-lagos-via-lago-traful-custom",
+    "expeditionSlug": "cicloturismo-na-patagonia-rota-dos-sete-lagos-via-lago-traful",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-15",
+    "status": "custom",
+    "notes": "Datas sob consulta — solicite orçamento"
+  },
+  {
+    "id": "costa-rica-multiaventuras-custom",
+    "expeditionSlug": "costa-rica-multiaventuras",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-15",
+    "status": "custom",
+    "notes": "Datas sob consulta — solicite orçamento"
+  },
+  {
+    "id": "descubra-o-quenia-com-porini-camps-custom",
+    "expeditionSlug": "descubra-o-quenia-com-porini-camps",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-15",
+    "status": "custom",
+    "notes": "Datas sob consulta — solicite orçamento"
+  },
+  {
+    "id": "essencias-da-tailandia-com-phuket-custom",
+    "expeditionSlug": "essencias-da-tailandia-com-phuket",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-15",
+    "status": "custom",
+    "notes": "Datas sob consulta — solicite orçamento"
+  },
+  {
+    "id": "explore-uganda-a-terra-dos-grandes-primatas-6-dias-custom",
+    "expeditionSlug": "explore-uganda-a-terra-dos-grandes-primatas-6-dias",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-15",
+    "status": "custom",
+    "notes": "Datas sob consulta — solicite orçamento"
+  },
+  {
+    "id": "islandia-reykjavik-custom",
+    "expeditionSlug": "islandia-reykjavik",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-15",
+    "status": "custom",
+    "notes": "Datas sob consulta — solicite orçamento"
+  },
+  {
+    "id": "maldivas-niyama-private-islands-custom",
+    "expeditionSlug": "maldivas-niyama-private-islands",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-15",
+    "status": "custom",
+    "notes": "Datas sob consulta — solicite orçamento"
+  },
+  {
+    "id": "mauritius-custom",
+    "expeditionSlug": "mauritius",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-15",
+    "status": "custom",
+    "notes": "Datas sob consulta — solicite orçamento"
+  },
+  {
+    "id": "nova-zelandia-essencial-9-dias-custom",
+    "expeditionSlug": "nova-zelandia-essencial-9-dias",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-15",
+    "status": "custom",
+    "notes": "Datas sob consulta — solicite orçamento"
+  },
+  {
+    "id": "os-encantos-da-cidade-do-mexico-custom",
+    "expeditionSlug": "os-encantos-da-cidade-do-mexico",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-15",
+    "status": "custom",
+    "notes": "Datas sob consulta — solicite orçamento"
+  },
+  {
+    "id": "parques-nacionais-do-yellowstone-ao-grand-canyon-14-dias-custom",
+    "expeditionSlug": "parques-nacionais-do-yellowstone-ao-grand-canyon-14-dias",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-15",
+    "status": "custom",
+    "notes": "Datas sob consulta — solicite orçamento"
+  },
+  {
+    "id": "peru-lima-e-machu-picchu-cultural-8-dias-custom",
+    "expeditionSlug": "peru-lima-e-machu-picchu-cultural-8-dias",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-15",
+    "status": "custom",
+    "notes": "Datas sob consulta — solicite orçamento"
+  },
+  {
+    "id": "trilhas-e-bike-na-terra-dos-canions-5-dias-custom",
+    "expeditionSlug": "trilhas-e-bike-na-terra-dos-canions-5-dias",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-15",
+    "status": "custom",
+    "notes": "Datas sob consulta — solicite orçamento"
   }
 ]
