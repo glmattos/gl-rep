@@ -1,0 +1,8 @@
+Preview ao vivo:
+https://massage-translations-guarantees-chips.trycloudflare.com
+
+Backup:
+https://shaky-radios-peel.loca.lt
+
+Branch: cursor/abc-fly-platform-audit-ba5a
+Servidor local: http://127.0.0.1:3000

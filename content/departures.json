@@ -1,0 +1,327 @@
+[
+  {
+    "id": "antartica-ushuaia-2026-11",
+    "expeditionSlug": "cruzeiro-antartica-mv-ushuaia",
+    "startDate": "2026-11-18",
+    "endDate": "2026-11-27",
+    "status": "available",
+    "notes": "Cabine twin compartilhada disponível",
+    "seatsLeft": 8
+  },
+  {
+    "id": "antartica-ushuaia-2026-12",
+    "expeditionSlug": "cruzeiro-antartica-mv-ushuaia",
+    "startDate": "2026-12-10",
+    "endDate": "2026-12-19",
+    "status": "limited",
+    "notes": "Últimas cabines externas",
+    "seatsLeft": 3
+  },
+  {
+    "id": "antartica-ushuaia-2027-01",
+    "expeditionSlug": "cruzeiro-antartica-mv-ushuaia",
+    "startDate": "2027-01-08",
+    "endDate": "2027-01-17",
+    "status": "available",
+    "seatsLeft": 12
+  },
+  {
+    "id": "alasca-silversea-2026-07",
+    "expeditionSlug": "silversea-alasca-vancouver-seward",
+    "startDate": "2026-07-14",
+    "endDate": "2026-07-21",
+    "status": "limited",
+    "seatsLeft": 4
+  },
+  {
+    "id": "alasca-silversea-2026-08",
+    "expeditionSlug": "silversea-alasca-vancouver-seward",
+    "startDate": "2026-08-11",
+    "endDate": "2026-08-18",
+    "status": "available",
+    "seatsLeft": 9
+  },
+  {
+    "id": "everest-2026-10",
+    "expeditionSlug": "nepal-everest-base-camp",
+    "startDate": "2026-10-05",
+    "endDate": "2026-10-20",
+    "status": "available",
+    "notes": "Grupo com guia em português",
+    "seatsLeft": 6
+  },
+  {
+    "id": "everest-2027-03",
+    "expeditionSlug": "nepal-everest-base-camp",
+    "startDate": "2027-03-22",
+    "endDate": "2027-04-06",
+    "status": "available",
+    "seatsLeft": 10
+  },
+  {
+    "id": "chapada-2026-09",
+    "expeditionSlug": "chapada-dos-veadeiros-essencial",
+    "startDate": "2026-09-12",
+    "endDate": "2026-09-16",
+    "status": "available",
+    "seatsLeft": 8
+  },
+  {
+    "id": "chapada-2026-10",
+    "expeditionSlug": "chapada-dos-veadeiros-essencial",
+    "startDate": "2026-10-17",
+    "endDate": "2026-10-21",
+    "status": "available",
+    "seatsLeft": 8
+  },
+  {
+    "id": "escocia-bike-2026-08",
+    "expeditionSlug": "escocia-bike-lago-ness",
+    "startDate": "2026-08-22",
+    "endDate": "2026-08-28",
+    "status": "waitlist",
+    "notes": "Lista de espera — avisamos se abrir vaga"
+  },
+  {
+    "id": "escocia-bike-2026-09",
+    "expeditionSlug": "escocia-bike-lago-ness",
+    "startDate": "2026-09-19",
+    "endDate": "2026-09-25",
+    "status": "available",
+    "seatsLeft": 5
+  },
+  {
+    "id": "kilimanjaro-2027-02",
+    "expeditionSlug": "tanzania-kilimanjaro-lemosho",
+    "startDate": "2027-02-08",
+    "endDate": "2027-02-18",
+    "status": "available",
+    "notes": "Rota Lemosho — aclimatização reforçada",
+    "seatsLeft": 7
+  },
+  {
+    "id": "paine-2026-11",
+    "expeditionSlug": "torres-del-paine-eco-camp",
+    "startDate": "2026-11-08",
+    "endDate": "2026-11-12",
+    "status": "available",
+    "seatsLeft": 6
+  },
+  {
+    "id": "paine-2027-01",
+    "expeditionSlug": "torres-del-paine-eco-camp",
+    "startDate": "2027-01-18",
+    "endDate": "2027-01-22",
+    "status": "available",
+    "seatsLeft": 8
+  },
+  {
+    "id": "amazon-2026-09",
+    "expeditionSlug": "aria-amazon-aqua-expeditions",
+    "startDate": "2026-09-04",
+    "endDate": "2026-09-07",
+    "status": "limited",
+    "seatsLeft": 3
+  },
+  {
+    "id": "amazon-2026-10",
+    "expeditionSlug": "aria-amazon-aqua-expeditions",
+    "startDate": "2026-10-09",
+    "endDate": "2026-10-12",
+    "status": "available",
+    "seatsLeft": 7
+  },
+  {
+    "id": "finland-2026-12",
+    "expeditionSlug": "finlandia-aurora-rovaniemi",
+    "startDate": "2026-12-12",
+    "endDate": "2026-12-17",
+    "status": "available",
+    "notes": "Alta temporada de aurora",
+    "seatsLeft": 5
+  },
+  {
+    "id": "finland-2027-02",
+    "expeditionSlug": "finlandia-aurora-rovaniemi",
+    "startDate": "2027-02-15",
+    "endDate": "2027-02-20",
+    "status": "available",
+    "seatsLeft": 6
+  },
+  {
+    "id": "costarica-2026-08",
+    "expeditionSlug": "costa-rica-natureza-selvagem",
+    "startDate": "2026-08-08",
+    "endDate": "2026-08-15",
+    "status": "available",
+    "seatsLeft": 8
+  },
+  {
+    "id": "indonesia-2026-09",
+    "expeditionSlug": "indonesia-bali-gili-lombok",
+    "startDate": "2026-09-05",
+    "endDate": "2026-09-12",
+    "status": "available",
+    "seatsLeft": 6
+  },
+  {
+    "id": "indonesia-2026-10",
+    "expeditionSlug": "indonesia-bali-gili-lombok",
+    "startDate": "2026-10-10",
+    "endDate": "2026-10-17",
+    "status": "limited",
+    "seatsLeft": 2
+  },
+  {
+    "id": "africa-do-sul-cape-town-e-safari-karongwe-private-reserve-custom",
+    "expeditionSlug": "africa-do-sul-cape-town-e-safari-karongwe-private-reserve",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-15",
+    "status": "custom",
+    "notes": "Datas sob consulta — solicite orçamento"
+  },
+  {
+    "id": "africa-do-sul-cape-town-e-safari-sabi-sabi-private-reserve-custom",
+    "expeditionSlug": "africa-do-sul-cape-town-e-safari-sabi-sabi-private-reserve",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-15",
+    "status": "custom",
+    "notes": "Datas sob consulta — solicite orçamento"
+  },
+  {
+    "id": "antarctica-21-travessia-aerea-e-ilha-do-rei-george-8-dias-custom",
+    "expeditionSlug": "antarctica-21-travessia-aerea-e-ilha-do-rei-george-8-dias",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-15",
+    "status": "custom",
+    "notes": "Datas sob consulta — solicite orçamento"
+  },
+  {
+    "id": "australia-classica-10-dias-custom",
+    "expeditionSlug": "australia-classica-10-dias",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-15",
+    "status": "custom",
+    "notes": "Datas sob consulta — solicite orçamento"
+  },
+  {
+    "id": "belezas-da-namibia-custom",
+    "expeditionSlug": "belezas-da-namibia",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-15",
+    "status": "custom",
+    "notes": "Datas sob consulta — solicite orçamento"
+  },
+  {
+    "id": "caminhos-sagrados-jornada-pelo-nepal-e-butao-12-dias-custom",
+    "expeditionSlug": "caminhos-sagrados-jornada-pelo-nepal-e-butao-12-dias",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-15",
+    "status": "custom",
+    "notes": "Datas sob consulta — solicite orçamento"
+  },
+  {
+    "id": "cicloturismo-na-patagonia-rota-dos-sete-lagos-via-lago-traful-custom",
+    "expeditionSlug": "cicloturismo-na-patagonia-rota-dos-sete-lagos-via-lago-traful",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-15",
+    "status": "custom",
+    "notes": "Datas sob consulta — solicite orçamento"
+  },
+  {
+    "id": "costa-rica-multiaventuras-custom",
+    "expeditionSlug": "costa-rica-multiaventuras",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-15",
+    "status": "custom",
+    "notes": "Datas sob consulta — solicite orçamento"
+  },
+  {
+    "id": "descubra-o-quenia-com-porini-camps-custom",
+    "expeditionSlug": "descubra-o-quenia-com-porini-camps",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-15",
+    "status": "custom",
+    "notes": "Datas sob consulta — solicite orçamento"
+  },
+  {
+    "id": "essencias-da-tailandia-com-phuket-custom",
+    "expeditionSlug": "essencias-da-tailandia-com-phuket",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-15",
+    "status": "custom",
+    "notes": "Datas sob consulta — solicite orçamento"
+  },
+  {
+    "id": "explore-uganda-a-terra-dos-grandes-primatas-6-dias-custom",
+    "expeditionSlug": "explore-uganda-a-terra-dos-grandes-primatas-6-dias",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-15",
+    "status": "custom",
+    "notes": "Datas sob consulta — solicite orçamento"
+  },
+  {
+    "id": "islandia-reykjavik-custom",
+    "expeditionSlug": "islandia-reykjavik",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-15",
+    "status": "custom",
+    "notes": "Datas sob consulta — solicite orçamento"
+  },
+  {
+    "id": "maldivas-niyama-private-islands-custom",
+    "expeditionSlug": "maldivas-niyama-private-islands",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-15",
+    "status": "custom",
+    "notes": "Datas sob consulta — solicite orçamento"
+  },
+  {
+    "id": "mauritius-custom",
+    "expeditionSlug": "mauritius",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-15",
+    "status": "custom",
+    "notes": "Datas sob consulta — solicite orçamento"
+  },
+  {
+    "id": "nova-zelandia-essencial-9-dias-custom",
+    "expeditionSlug": "nova-zelandia-essencial-9-dias",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-15",
+    "status": "custom",
+    "notes": "Datas sob consulta — solicite orçamento"
+  },
+  {
+    "id": "os-encantos-da-cidade-do-mexico-custom",
+    "expeditionSlug": "os-encantos-da-cidade-do-mexico",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-15",
+    "status": "custom",
+    "notes": "Datas sob consulta — solicite orçamento"
+  },
+  {
+    "id": "parques-nacionais-do-yellowstone-ao-grand-canyon-14-dias-custom",
+    "expeditionSlug": "parques-nacionais-do-yellowstone-ao-grand-canyon-14-dias",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-15",
+    "status": "custom",
+    "notes": "Datas sob consulta — solicite orçamento"
+  },
+  {
+    "id": "peru-lima-e-machu-picchu-cultural-8-dias-custom",
+    "expeditionSlug": "peru-lima-e-machu-picchu-cultural-8-dias",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-15",
+    "status": "custom",
+    "notes": "Datas sob consulta — solicite orçamento"
+  },
+  {
+    "id": "trilhas-e-bike-na-terra-dos-canions-5-dias-custom",
+    "expeditionSlug": "trilhas-e-bike-na-terra-dos-canions-5-dias",
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-15",
+    "status": "custom",
+    "notes": "Datas sob consulta — solicite orçamento"
+  }
+]
